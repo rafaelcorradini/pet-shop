@@ -1,0 +1,8 @@
+@import url('reset.css'); 
+@import url('vars.css');
+
+@import url('general.css');
+@import url('navbar.css');
+@import url('sidebar.css');
+@import url('content.css');
+@import url('table.css');

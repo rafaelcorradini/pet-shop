@@ -1,0 +1,12 @@
+/* colors vars */
+
+:root {
+    --grey: #628395;
+    --grey-dark: #415763; 
+    --grey-dark-hover: #3F5C6B;
+    --red: #FF6F52; 
+    --green: #6FCF97;
+    --grey-cancel: #D6D6D6;
+    --grey-bg: #F9F9F9;
+    --grey-side: #474E52;
+}

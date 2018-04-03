@@ -1,0 +1,17 @@
+#content {
+    display: table-cell;
+    padding: 2em 3em;
+}
+
+#content h1 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 1.5em;
+}
+
+.wrapper {
+    background: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.14);
+    border-radius: 5px;
+    padding: 1em;
+}

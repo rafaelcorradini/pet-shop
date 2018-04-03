@@ -1,0 +1,21 @@
+body {
+    background: var(--grey-bg);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+#container {
+    box-sizing: border-box;
+    display: table;
+    width: 100%;
+}

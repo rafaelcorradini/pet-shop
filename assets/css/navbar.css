@@ -1,0 +1,54 @@
+#navbar {
+    width: 100%;
+    height: 50px;
+    background: var(--grey);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#navbar-logo {
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    background: var(--grey-dark);
+    padding: 0 2em;
+}
+
+#navbar-logo:hover {
+    background: var(--grey-dark-hover);
+}
+
+#menu-button {
+    height: 50px;
+    padding: 0 1em;
+}
+
+#menu-button svg {
+    line-height: 50px;
+}
+
+#navbar svg {
+    color: #fff;
+    font-size: 18px;
+}
+
+#btn-user:hover {
+    height: 50px;
+    background: var(--grey-dark-hover);
+}
+
+#btn-user {
+    color: #fff;
+    font-weight: 700;
+    padding: 0 2em;
+}
+
+#btn-user svg {
+    margin-left: 20px;
+}
