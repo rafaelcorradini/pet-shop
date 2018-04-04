@@ -88,7 +88,44 @@
                     </ul>
                 </nav>
             </section>
+
+            <br>
+            <br>
+            <h1>Cadastrar produto</h1>
+            <section class="wrapper">
+                <form action="bootstrap.html">
+                    <p>
+                        <label for="name">Nome</label>
+                        <input type="text" autofocus name="name" required>
+                    </p>
+                    <p>
+                        <label for="date">Data</label>
+                        <input type="date" name="date" required>
+                    </p>
+                    <p>
+                        <label for="category">Categoria</label>
+                        <select name="category">
+                            <option value=""></option>
+                            <option value="">Categoria 1</option>
+                            <option value="">Categoria 2</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="description">Descrição</label>
+                        <textarea name="description"cols="30" rows="10"></textarea>
+                    </p>
+                    <p>
+                        <button type="submit" class="btn btn-save">Salvar</button>
+                        <button type="submit" class="btn btn-cancel">Cancelar</button>
+                        
+                        
+                    </p>
+                    
+                </form>
+            </section>            
         </section>
+
+        
     </div>
 
 </body>

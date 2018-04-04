@@ -13,28 +13,14 @@
     display: inline-block;
 }
 
-#form-container {
-    position: relative;
-}
-
 #login form input {
-    box-sizing: border-box;
-    width: 100%;
-    border: 0;
     margin: 0.5em 0;
-    padding: 1em;
-    border-radius: 3px;
-    border: 1px solid #D6D6D6;
-    box-shadow: 0 2px 0 0 rgba(148, 148, 148, 0.14);
+    width: 100%;
 }
 
 #login button {
     margin-top: 1em;
     width: 100%;
-}
-
-#login button:hover {
-    background: rgb(120, 211, 158);
 }
 
 #login a {

@@ -36,3 +36,15 @@ input, textarea {
     background: var(--green);
     border-radius: 3px;
 }
+
+.btn:hover {
+    background: rgb(110, 192, 144);
+}
+
+.btn-cancel {
+    background: #D6D6D6;
+}
+
+.btn-cancel:hover {
+    background: rgb(177, 177, 177);
+}

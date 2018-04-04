@@ -1,5 +1,6 @@
 #sidebar {
     display: none;
+    background: var(--grey-side);
 }
 
 #sidebar.active {
@@ -8,7 +9,7 @@
 }
 
 #sidebar nav {
-    position: fixed;
+    position: relative;
     background: var(--grey-side);
     width: 182px;
     height: 100%;
