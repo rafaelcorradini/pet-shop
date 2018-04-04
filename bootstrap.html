@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     <link href="assets/css/application.css" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -12,7 +13,7 @@
     <header id="navbar">
         <section id="navbar-left">
             <a id="navbar-logo" href="/loja.html">petshop.com</a>
-            <button id="menu-button">
+            <button id="menu-button" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </section>
@@ -24,7 +25,7 @@
     </header>
 
     <div id="container">    
-        <aside id="sidebar">
+        <aside id="sidebar" class="active">
             <nav>
                 <ul>
                     <li><a href="#" class="active">Dashboard</a></li>
@@ -52,26 +53,45 @@
                             <td>1</td>
                             <td>Produto teste</td>
                             <td>Categoria teste</td>
-                            <td>editar - excluir</td>
+                            <td>
+                                <a href="#" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="btn-actions btn-remove" title="excluir"><i class="fas fa-trash-alt"></i></a>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Produto teste</td>
                             <td>Categoria teste</td>
-                            <td>editar - excluir</td>
+                            <td>
+                                <a href="#" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="btn-actions btn-remove" title="excluir"><i class="fas fa-trash-alt"></i></a>
+                            </td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Produto teste</td>
                             <td>Categoria teste</td>
-                            <td>editar - excluir</td>
+                            <td>
+                                <a href="#" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="btn-actions btn-remove" title="excluir"><i class="fas fa-trash-alt"></i></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
+
+                <nav class="pagination">
+                    <ul>
+                        <li><a href="#"><<</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">>></a></li>
+                    </ul>
+                </nav>
             </section>
         </section>
     </div>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 </body>
+
+<script src="assets/js/menu.js"></script>
 </html>

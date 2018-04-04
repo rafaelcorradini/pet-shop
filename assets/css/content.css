@@ -15,3 +15,72 @@
     border-radius: 5px;
     padding: 1em;
 }
+
+.content-table {
+    width: 100%;
+}
+
+.content-table tr {
+    border-bottom: 1px solid rgba(196, 196, 196, 0.26);
+}
+
+.content-table th {
+    font-weight: 700;
+}
+
+.content-table th, .content-table td {
+    padding: 0.7em;
+    text-align: left;
+}
+
+.content-table th {
+    padding: 1em;
+}
+
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+
+.pagination ul {
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    background: var(--grey-bg);
+    display: flex;
+}
+
+.pagination ul li {
+    padding: 1em 0.5em;
+}
+
+.pagination ul li a {
+    color: var(--grey);
+}
+
+.btn-actions {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.btn-edit {
+    background: var(--grey);
+}
+
+.btn-edit:hover {
+    background: var(--grey-dark);
+}
+
+.btn-remove {
+    background: var(--red);
+}
+
+.btn-remove:hover {
+    background: var(--red-dark);
+}

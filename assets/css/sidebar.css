@@ -1,8 +1,9 @@
 #sidebar {
-    /* position: fixed; */
+    display: none;
+}
+
+#sidebar.active {
     width: 182px;
-    
-    
     display: table-cell;
 }
 

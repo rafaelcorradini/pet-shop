@@ -29,11 +29,11 @@
     padding: 0 1em;
 }
 
-#menu-button svg {
+#menu-button i {
     line-height: 50px;
 }
 
-#navbar svg {
+#navbar i {
     color: #fff;
     font-size: 18px;
 }
@@ -49,6 +49,6 @@
     padding: 0 2em;
 }
 
-#btn-user svg {
+#btn-user i {
     margin-left: 20px;
 }
