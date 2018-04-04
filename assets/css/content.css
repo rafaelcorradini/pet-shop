@@ -84,3 +84,16 @@
 .btn-remove:hover {
     background: var(--red-dark);
 }
+
+
+/* mobile */
+@media screen and (max-width: 750px) {
+    #content {
+        display: block;
+        padding: 2em 1em;
+    }
+
+    #container {
+        display: block;
+    }
+}

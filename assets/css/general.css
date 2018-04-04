@@ -14,8 +14,25 @@ button {
     cursor: pointer;
 }
 
+input, textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+::placeholder {
+    color: #99907D;
+}
+
 #container {
     box-sizing: border-box;
     display: table;
     width: 100%;
+}
+
+.btn {
+    font-weight: 700;
+    color: #fff;
+    padding: 1.2em 2em;
+    background: var(--green);
+    border-radius: 3px;
 }

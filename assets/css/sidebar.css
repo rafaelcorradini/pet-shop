@@ -33,3 +33,18 @@
 #sidebar a.active {
     border-left: 3px solid var(--grey);
 }
+
+/* mobile */
+@media screen and (max-width: 750px) {
+    #sidebar.active {
+        margin-top: -1.5em;
+        display: block;
+        width: 100%;
+    }
+
+    #sidebar nav {
+        position: relative;
+        background: var(--grey-side);
+        width: 100%;
+    }
+}
