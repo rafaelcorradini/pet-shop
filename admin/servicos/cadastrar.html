@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link href="../assets/css/application.css" rel="stylesheet">
+    <title>Cadastrar Serviço | Painel Petshop.com</title>
+</head>
+<body>
+    <header id="navbar">
+        <section id="navbar-left">
+            <a id="navbar-logo" href="../../index.html">petshop.com</a>
+            <button id="menu-button" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </section>
+        
+        <button id="btn-user" class="btn-dropdown">
+            Nome do usuário
+            <i class="fas fa-cogs"></i>
+        </button>
+    </header>
+
+    <div id="container">    
+        <aside id="sidebar" class="active">
+            <nav>
+                <ul>\
+                    <li><a href="../categorias/index.html">Categorias</a></li>
+                    <li><a href="../produtos/index.html">Produtos</a></li>
+                    <li><a href="index.html" class="active">Serviços</a></li>
+                    <li><a href="../clientes/index.html">Clientes</a></li>
+                    <li><a href="../administradores/index.html">Administradores</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section id="content">
+            <section class="wrapper">
+            <h1>Cadastrar Serviço</h1>
+                <form action="">
+                <p>
+                        <label for="service">Serviço</label>
+                        <input type="text" name="name" required>
+                    </p>
+                    <p>
+                        <label for="description">Descrição</label>
+                        <textarea name="description"cols="30" rows="10"></textarea>
+                    </p>
+                    <p>
+                        <button type="submit" class="btn btn-save">Salvar</button>
+                        <a href="index.html" class="btn btn-cancel">Cancelar</a>
+                        
+                        
+                    </p>
+                    
+                </form>
+            </section>  
+        </section> 
+           
+    </div>
+</body>
+
+<script src="../assets/js/menu.js"></script>
+</html>

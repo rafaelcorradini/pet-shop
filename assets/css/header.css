@@ -1,0 +1,140 @@
+#header-top {
+    height: 30px;
+    width: 100%;
+    background: var(--grey);
+    color: #fff;
+}
+
+#header-top .container {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    line-height: 30px;
+}
+
+#header-top a {
+    color: #fff;
+    margin-left: 2em;
+}
+
+#header-mid {
+    width: 100%;
+    padding: 1em 0;
+}
+
+#header-mid .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#header-search {
+    position: relative;
+    min-width: 400px;
+}
+
+#header-search input {
+    width: 100%;
+    border: 0;
+    padding: 1.1em 1.2em;
+    background: #F2F2F2;
+    border-radius: 3px;
+}
+
+#header-search button {
+    position: absolute;
+    color: #99907D;
+    margin-top: -30px;
+    right: 20px;
+}
+
+#header-admin {
+    color: #4F4F4F;
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 2px solid var(--grey);;
+}
+
+#header-admin:hover {
+    color: var(--red);
+    border-bottom: 2px solid var(--red);
+}
+
+#header-cart i {
+    color: var(--grey);
+    font-size: 52px;
+}
+
+#header-cart:hover i {
+    color: var(--grey-dark);
+}
+
+#header-cart p {
+    position: absolute;
+    background: var(--red);
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+
+#header-categories ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#header-categories a {
+    display: block;
+    width: 100%;
+    color: #4F4F4F;
+    padding: 1.5em 0;
+}
+
+#header-categories a:hover {
+    color: var(--red);
+}
+
+#header-categories a i {
+    margin-left: 5px;
+}
+
+#btn-dropdown-categories {
+    background: var(--grey);
+    border-radius: 3px;
+    color: #fff;
+    padding: 1em;
+    width: 100%;
+    margin: 1em 0;
+    display: none;
+}
+
+#btn-dropdown-categories:hover {
+    background: var(--grey-dark);
+}
+
+
+@media screen and (max-width: 800px) {
+    #btn-dropdown-categories {
+        display: block;
+    }
+    #header-search  {
+        width: 100%;
+        margin: 2em 0;
+    }
+    #header-categories ul {
+        display: none;
+    }
+    #header-categories ul li {
+        width: 100%;
+        text-align: center;
+    }
+    #header-categories ul.active {
+        display: flex;
+    }
+}

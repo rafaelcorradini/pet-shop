@@ -1,0 +1,8 @@
+@import url('reset.css'); 
+@import url('vars.css');
+
+@import url('general.css');
+@import url('header.css');
+@import url('home.css');
+@import url('products.css');
+@import url('footer.css');

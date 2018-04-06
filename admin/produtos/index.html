@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    <link href="assets/css/application.css" rel="stylesheet">
-    <title>Document</title>
+    <link href="../assets/css/application.css" rel="stylesheet">
+    <title>Produtos | Painel Petshop.com</title>
 </head>
 <body>
     <header id="navbar">
         <section id="navbar-left">
-            <a id="navbar-logo" href="/loja.html">petshop.com</a>
+            <a id="navbar-logo" href="../../index.html">petshop.com</a>
             <button id="menu-button" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
@@ -28,17 +27,20 @@
         <aside id="sidebar" class="active">
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Dashboard</a></li>
-                    <li><a href="#">Produtos</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Usuários</a></li>
+                    <li><a href="../categorias/index.html">Categorias</a></li>
+                    <li><a href="index.html" class="active">Produtos</a></li>
+                    <li><a href="../servicos/index.html">Serviços</a></li>
+                    <li><a href="../clientes/index.html">Clientes</a></li>
+                    <li><a href="../administradores/index.html">Administradores</a></li>
                 </ul>
             </nav>
         </aside>
 
         <section id="content">
-            <h1>Produtos</h1>
+            
             <section class="wrapper">
+                <h1>Produtos</h1> 
+                <a href="cadastrar.html" class="btn btn-save btn-new">Cadastrar novo</a>
                 <table class="content-table">
                     <thead>
                         <tr>
@@ -54,7 +56,7 @@
                             <td>Produto teste</td>
                             <td>Categoria teste</td>
                             <td>
-                                <a href="#" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
+                                <a href="editar.html" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
                                 <a href="#" class="btn-actions btn-remove" title="excluir"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -63,7 +65,7 @@
                             <td>Produto teste</td>
                             <td>Categoria teste</td>
                             <td>
-                                <a href="#" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
+                                <a href="editar.html" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
                                 <a href="#" class="btn-actions btn-remove" title="excluir"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -72,7 +74,7 @@
                             <td>Produto teste</td>
                             <td>Categoria teste</td>
                             <td>
-                                <a href="#" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
+                                <a href="editar.html" class="btn-actions btn-edit" title="editar"><i class="fas fa-edit"></i></a>
                                 <a href="#" class="btn-actions btn-remove" title="excluir"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -87,42 +89,7 @@
                         <li><a href="#">>></a></li>
                     </ul>
                 </nav>
-            </section>
-
-            <br>
-            <br>
-            <h1>Cadastrar produto</h1>
-            <section class="wrapper">
-                <form action="bootstrap.html">
-                    <p>
-                        <label for="name">Nome</label>
-                        <input type="text" autofocus name="name" required>
-                    </p>
-                    <p>
-                        <label for="date">Data</label>
-                        <input type="date" name="date" required>
-                    </p>
-                    <p>
-                        <label for="category">Categoria</label>
-                        <select name="category">
-                            <option value=""></option>
-                            <option value="">Categoria 1</option>
-                            <option value="">Categoria 2</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="description">Descrição</label>
-                        <textarea name="description"cols="30" rows="10"></textarea>
-                    </p>
-                    <p>
-                        <button type="submit" class="btn btn-save">Salvar</button>
-                        <button type="submit" class="btn btn-cancel">Cancelar</button>
-                        
-                        
-                    </p>
-                    
-                </form>
-            </section>            
+            </section>          
         </section>
 
         
@@ -130,5 +97,5 @@
 
 </body>
 
-<script src="assets/js/menu.js"></script>
+<script src="../assets/js/menu.js"></script>
 </html>
