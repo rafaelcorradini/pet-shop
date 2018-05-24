@@ -1,4 +1,4 @@
-#navbar {
+.navbar {
     position: relative;
     width: 100%;
     height: 50px;
@@ -8,12 +8,12 @@
     justify-content: space-between;
 }
 
-#navbar-left {
+.navbar-left {
     display: flex;
     justify-content: flex-start;
 }
 
-#navbar-logo {
+.navbar-logo {
     color: #fff;
     height: 50px;
     line-height: 50px;
@@ -21,35 +21,35 @@
     padding: 0 2em;
 }
 
-#navbar-logo:hover {
+.navbar-logo:hover {
     background: var(--grey-dark-hover);
 }
 
-#menu-button {
+.menu-button {
     height: 50px;
     padding: 0 1em;
 }
 
-#menu-button i {
+.menu-button i {
     line-height: 50px;
 }
 
-#navbar i {
+.navbar i {
     color: #fff;
     font-size: 18px;
 }
 
-#btn-user:hover {
+.btn-user:hover {
     height: 50px;
     background: var(--grey-dark-hover);
 }
 
-#btn-user {
+.btn-user {
     color: #fff;
     font-weight: 700;
     padding: 0 2em;
 }
 
-#btn-user i {
+.btn-user i {
     margin-left: 20px;
 }
