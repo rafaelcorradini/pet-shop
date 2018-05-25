@@ -117,6 +117,9 @@ input, textarea {
     border-radius: 3px;
 }
 
+@import url('./share/Navbar.css');
+@import url('./share/Header.css');
+
 .btn:hover {
     background: rgb(110, 192, 144);
 }
@@ -129,4 +132,3 @@ input, textarea {
     background: rgb(177, 177, 177);
 } */
 
-@import url('./share/Navbar.css');
