@@ -1,4 +1,7 @@
-
+.sidebar {
+    display: none;
+    background: var(--grey-side);
+}
 
 .sidebar.active {
     width: 182px;

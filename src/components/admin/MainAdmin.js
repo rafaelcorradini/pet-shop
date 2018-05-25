@@ -1,10 +1,9 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Dashboard from './Dashboard';
+
 import './MainAdmin.css';
 import Navbar from './share/Navbar'
-import Container from './share/Container'
 import Sidebar from './share/Sidebar'
+import Form from './share/Form'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -15,14 +14,16 @@ class Main extends React.Component{
 	render (){
 		return (
 			<div>
-				<Navbar/>
-				<Sidebar/>
-				<div className = 'container'>
-
-    				<Switch>
-      					<Route exact path='/admin' component={Dashboard}/>
-    				</Switch>
-  				</div>
+    			<Navbar/>
+    			<Sidebar/>
+   				 <div className = 'container'>
+   				 	
+   				 	<section className = 'content'>
+   				 		<section className ='wrapper'>
+   				 			<Form/>
+    					</section>
+    				</section>
+    			</div>
 			</div>
 			
 			);

@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './Reset.css';
-import ReactDOM from "react-dom";
+import Main from './Main.js';
 
-const app = document.getElementById('app');
-ReactDOM.render(<Main/>, app)
+class App extends Component {
+  render() {
+    return (
+      <Main />
+    );
+  }
+}
+
+export default App;
