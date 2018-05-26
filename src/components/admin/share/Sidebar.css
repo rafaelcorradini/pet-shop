@@ -1,6 +1,7 @@
 .sidebar {
     display: none;
     background: var(--grey-side);
+    height: 100%;
 }
 
 .sidebar.active {

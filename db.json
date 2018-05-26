@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Produto teste 1",
+      "description": "descrição asdf asdf asdf asdf adfasd",
+      "category": {
+        "id": 1,
+        "name": "Categoria teste 1"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Produto teste 2",
+      "description": "lorem ipsum asdf asdf asdf asdf asdf asdf asd f",
+      "category": {
+        "id": 1,
+        "name": "Categoria teste 1"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Categoria teste 1"
+    }
+  ]
+}
