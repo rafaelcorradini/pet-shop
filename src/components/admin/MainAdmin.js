@@ -18,13 +18,13 @@ class MainAdmin extends React.Component{
 			<div>
     			<Navbar/>
    				<div className='container'>
-					 	<Sidebar/>
+						<Sidebar path={this.props.location}/>
    				 	<section className='content'>
    				 		<section className='wrapper'>
 								<main>
 									<Switch>
 										<Route exact path='/admin' component={Dashboard}/>
-										<Route exact path='/admin/produtos' component={Products}/>
+										<Route path='/admin/produtos' component={Products}/>
 									</Switch>
 								</main>
     					</section>

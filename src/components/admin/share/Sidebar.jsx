@@ -1,17 +1,30 @@
 import './Sidebar.css'
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Sidebar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			path: props.path.pathname.split('/')[2]
+		};
+	}
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			path: this.props.path.pathname.split('/')[2]
+		});
+	}
   render() {
     return (
 			<aside className="sidebar active">
 				<nav>
 					<ul>
-						<li><a href="../categorias/index.html">Categorias</a></li>
-						<li><a href="index.html" className="active">Produtos</a></li>
-						<li><a href="../servicos/index.html">Serviços</a></li>
-						<li><a href="../clientes/index.html">Clientes</a></li>
-						<li><a href="../administradores/index.html">Administradores</a></li>
+						<li><Link to="/admin" className={this.state.path === '' ? 'active': ''}>Dashboard</Link></li>
+						<li><Link to="/admin/categorias" className={this.state.path === 'categorias' ? 'active': ''}>Categorias</Link></li>
+						<li><Link to="/admin/produtos" className={this.state.path === 'produtos' ? 'active': ''}>Produtos</Link></li>
+						<li><Link to="/admin/servicos" className={this.state.path === 'servicos' ? 'active': ''}>Serviços</Link></li>
+						<li><Link to="/admin/clientes" className={this.state.path === 'clientes' ? 'active': ''}>Clientes</Link></li>
+						<li><Link to="/admin/administradores" className={this.state.path === 'administradores' ? 'active': ''}>Administradores</Link></li>
 					</ul>
 				</nav>
 			</aside>

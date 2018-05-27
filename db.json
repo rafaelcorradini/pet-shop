@@ -2,27 +2,25 @@
   "products": [
     {
       "id": 1,
-      "name": "Produto teste 1",
-      "description": "descrição asdf asdf asdf asdf adfasd",
-      "category": {
-        "id": 1,
-        "name": "Categoria teste 1"
-      }
+      "name": "Produto teste 555",
+      "categoryId": "1",
+      "description": "descricaonova"
     },
     {
       "id": 2,
-      "name": "Produto teste 2",
-      "description": "lorem ipsum asdf asdf asdf asdf asdf asdf asd f",
-      "category": {
-        "id": 1,
-        "name": "Categoria teste 1"
-      }
+      "name": "vasdfais",
+      "categoryId": "1",
+      "description": "asdfasdf"
     }
   ],
   "categories": [
     {
       "id": 1,
       "name": "Categoria teste 1"
+    },
+    {
+      "id": 2,
+      "name": "Categoria teste 2"
     }
   ]
 }

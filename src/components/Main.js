@@ -15,7 +15,7 @@ class Main extends Component {
 			<main>
 				<Switch>
 					<Route exact path='/' component={Home}/>
-					<Route exact path='/admin' component={MainAdmin}/>
+					<Route path='/admin' component={MainAdmin}/>
 				</Switch>
 			</main>
 		)

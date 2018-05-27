@@ -118,6 +118,10 @@ select {
 	padding: 1em;
 }
 
+.content-table a {
+	margin-right: 10px;
+}
+
 .pagination {
 	position: relative;
 	display: flex;
@@ -186,7 +190,7 @@ select {
 
 /* forms */
 
-form p {
+form .form-group {
 	margin: 1em 0;
 }
 
