@@ -2,15 +2,9 @@
   "products": [
     {
       "id": 1,
-      "name": "Produto teste 555",
-      "categoryId": "1",
-      "description": "descricaonova"
-    },
-    {
-      "id": 2,
-      "name": "vasdfais",
-      "categoryId": "1",
-      "description": "asdfasdf"
+      "name": "sdsd",
+      "categoryId": "2",
+      "description": "sdsds"
     }
   ],
   "categories": [
@@ -21,6 +15,34 @@
     {
       "id": 2,
       "name": "Categoria teste 2"
+    }
+  ],
+  "services": [
+    {
+      "id": 2,
+      "name": "assdas",
+      "description": "asasasas"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "21212",
+      "email": "21212",
+      "cpf": "2222222222222",
+      "password": "asas",
+      "passwordcheck": "sasas"
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "name": "asasas",
+      "email": "wew",
+      "cpf": "2222",
+      "phone": "324234",
+      "password": "asdas",
+      "passwordcheck": "dasdasd"
     }
   ]
 }
