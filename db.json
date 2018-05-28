@@ -37,11 +37,11 @@
   "admins": [
     {
       "id": 1,
-      "name": "asasas",
+      "username": "admin",
       "email": "wew",
       "cpf": "2222",
       "phone": "324234",
-      "password": "asdas",
+      "password": "admin",
       "passwordcheck": "dasdasd"
     }
   ]

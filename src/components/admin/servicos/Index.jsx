@@ -1,5 +1,5 @@
 import React from 'react';
-import Service from './../../../Service';
+import model from './../../../model';
 import http from './../../../http';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ class Services extends React.Component{
   }
 
   removeService(id) {
-    Service.removeById(id, 'services');
+    model.removeById(id, 'services');
     this.componentDidMount();
   }
 

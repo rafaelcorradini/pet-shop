@@ -1,5 +1,5 @@
 import React from 'react';
-import Service from './../../Service';
+import model from './../../model';
 import http from './../../http';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ class Dashboard extends React.Component{
   }
 
   removeProduct(id) {
-    Service.removeById(id, 'products');
+    model.removeById(id, 'products');
     this.componentDidMount();
   }
 

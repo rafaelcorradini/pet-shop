@@ -7,6 +7,7 @@ import Products from './products/MainProduct'
 import Services from './servicos/MainService'
 import Clients from './clients/MainClient'
 import Admin from './administrador/MainAdministrador'
+import model from './../../model'
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -16,6 +17,13 @@ import { Switch, Route } from 'react-router-dom';
 // with /roster or /schedule. The / route will only match
 // when the pathname is exactly the string "/"
 class MainAdmin extends React.Component{
+	constructor(props) {
+		super(props);
+	}
+	componentDidMount() {
+		if (!model.auth())
+			this.props.history.push('/login');
+  }
 	render (){
 		return (
 			<div>

@@ -7,7 +7,7 @@ class NewAdmin extends React.Component{
     super(props);
     this.state = {
       id: null,
-      name: null,
+      username: null,
       email: null,
       cpf: null,
       phone: null,
@@ -51,7 +51,7 @@ class NewAdmin extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Nome</label>
-            <input type="text" autoFocus name="name" value={this.state.name} onChange={this.handleInputChange} required />
+            <input type="text" autoFocus name="name" value={this.state.username} onChange={this.handleInputChange} required />
           </div>
            <div className="form-group">
             <label htmlFor="email">E-Mail</label>

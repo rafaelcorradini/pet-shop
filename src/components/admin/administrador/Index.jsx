@@ -1,5 +1,5 @@
 import React from 'react';
-import Service from './../../../Service';
+import model from './../../../model';
 import http from './../../../http';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ class Admin extends React.Component{
   }
 
   removeAdmin(id) {
-    Service.removeById(id, 'admins');
+    model.removeById(id, 'admins');
     this.componentDidMount();
   }
 
@@ -29,7 +29,7 @@ class Admin extends React.Component{
     const admins = this.state.admins.map((admin) =>
       <tr>
         <td>{admin.id}</td>
-        <td>{admin.name}</td>
+        <td>{admin.username}</td>
         <td>{admin.cpf}</td>
         <td>
           <Link to={'/admin/administrador/'+admin.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>

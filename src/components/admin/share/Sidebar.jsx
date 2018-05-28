@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
 	}
 	componentWillReceiveProps(nextProps) {
 		this.setState({
-			path: this.props.path.pathname.split('/')[2]
+			path: nextProps.path.pathname.split('/')[2]
 		});
 	}
   render() {
@@ -19,7 +19,7 @@ class Sidebar extends React.Component {
 			<aside className="sidebar active">
 				<nav>
 					<ul>
-						<li><Link to="/admin" className={this.state.path === '' ? 'active': ''}>Dashboard</Link></li>
+						<li><Link to="/admin" className={this.state.path === undefined ? 'active': ''}>Dashboard</Link></li>
 						<li><Link to="/admin/categorias" className={this.state.path === 'categorias' ? 'active': ''}>Categorias</Link></li>
 						<li><Link to="/admin/produtos" className={this.state.path === 'produtos' ? 'active': ''}>Produtos</Link></li>
 						<li><Link to="/admin/servicos" className={this.state.path === 'servicos' ? 'active': ''}>Serviços</Link></li>
