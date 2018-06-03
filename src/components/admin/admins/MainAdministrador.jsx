@@ -1,6 +1,7 @@
 import React from 'react';
 import Index from './Index'
 import New from './New'
+import Edit from './Edit'
 import { Switch, Route } from 'react-router-dom';
 
 class Main extends React.Component{
@@ -8,8 +9,9 @@ class Main extends React.Component{
     return (
       <main>
         <Switch>
-          <Route exact path='/admin/administrador' component={Index}/>
-          <Route exact path='/admin/administrador/novo' component={New}/>
+          <Route exact path='/admin/administradores' component={Index}/>
+          <Route exact path='/admin/administradores/novo' component={New}/>
+          <Route exact path='/admin/administradores/:id' component={Edit}/>
         </Switch>
       </main>
       

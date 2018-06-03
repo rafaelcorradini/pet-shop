@@ -21,8 +21,9 @@ class Products extends React.Component{
   }
 
   removeProduct(id) {
-    model.removeById(id, 'products');
-    this.componentDidMount();
+    model.removeById(id, 'products').then(() => {
+      this.componentDidMount();
+    });;
   }
 
   render() {

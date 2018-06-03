@@ -21,8 +21,9 @@ class Clients extends React.Component{
   }
 
   removeClient(id) {
-    model.removeById(id, 'clients');
-    this.componentDidMount();
+    model.removeById(id, 'clients').then(() => {
+      this.componentDidMount();
+    });
   }
 
   render() {
@@ -39,7 +40,7 @@ class Clients extends React.Component{
     );
     return (
       <div>
-        <h1>Clients</h1> 
+        <h1>Clientes</h1> 
         <Link to="/admin/clients/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
         <table className="content-table">
             <thead>

@@ -11,8 +11,7 @@ class NewAdmin extends React.Component{
       email: null,
       cpf: null,
       phone: null,
-      password: null,
-      passwordcheck: null
+      password: null
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -23,22 +22,32 @@ class NewAdmin extends React.Component{
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    let password = document.getElementsByName("passwordcheck")[0];
+
+    password.setCustomValidity("");
 
     this.setState({
       [name]: value
     });
+  
   }
 
   handleSubmit(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     let data = {};
-    Object.assign(data, this.state);
-    delete data.categories;
+    let password = document.getElementsByName("passwordcheck")[0];
+    
+    if(this.state.password != this.state.passwordcheck) {
+      password.setCustomValidity("As senhas não conferem.");
+      return;
+    } else {
+      password.setCustomValidity("");
+    }
   
-    http.post('/admins', data)
+    http.put('/admins', this.state)
       .then(res => {
-        this.props.history.push('/admin/administrador');
+        this.props.history.push('/admin/administradores');
       });
   }
 
@@ -50,8 +59,8 @@ class NewAdmin extends React.Component{
         <h1>Cadastrar Administrador</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Nome</label>
-            <input type="text" autoFocus name="name" value={this.state.username} onChange={this.handleInputChange} required />
+            <label htmlFor="username">Usuário</label>
+            <input type="text" autoFocus name="username" value={this.state.username} onChange={this.handleInputChange} required />
           </div>
            <div className="form-group">
             <label htmlFor="email">E-Mail</label>
@@ -59,7 +68,7 @@ class NewAdmin extends React.Component{
           </div>
           <div className="form-group">
             <label htmlFor="cpf">CPF</label>
-            <input type="number" autoFocus name="cpf"  value={this.state.CPF} onChange={this.handleInputChange} required />
+            <input type="number" autoFocus name="cpf"  value={this.state.cpf} onChange={this.handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="phone">Phone</label>
@@ -71,7 +80,7 @@ class NewAdmin extends React.Component{
           </div>
            <div className="form-group">
             <label htmlFor="password">Confirmar Senha</label>
-            <input type="password" autoFocus name="passwordcheck"  value={this.state.passwordcheck} onChange={this.handleInputChange} required />
+            <input type="password" autoFocus name="passwordcheck" onChange={this.handleInputChange} required />
           </div>
           <div className="form-group">
             <button type="submit" className="btn btn-save">Salvar</button>

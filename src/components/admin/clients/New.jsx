@@ -46,7 +46,7 @@ class ProductNew extends React.Component{
   render () {
     return (
       <div>
-        <h1>Cadastrar Client</h1>
+        <h1>Cadastrar Cliente</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Nome</label>
@@ -67,10 +67,6 @@ class ProductNew extends React.Component{
            <div className="form-group">
             <label htmlFor="password">Confirmar Senha</label>
             <input type="password" autoFocus name="passwordcheck"  value={this.state.passwordcheck} onChange={this.handleInputChange} required />
-          </div>
-          <div className="form-group">
-            <label><input type="checkbox" name="offer_check" value="Offer"/></label>
-                        <span>Quero receber ofertas exclusivas</span>
           </div>
 
           <div className="form-group">

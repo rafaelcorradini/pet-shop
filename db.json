@@ -19,9 +19,9 @@
   ],
   "services": [
     {
-      "id": 2,
-      "name": "assdas",
-      "description": "asasasas"
+      "id": 1,
+      "name": "asdfasdf",
+      "description": "asdfasdf"
     }
   ],
   "clients": [
@@ -29,9 +29,10 @@
       "id": 1,
       "name": "21212",
       "email": "21212",
-      "cpf": "2222222222222",
-      "password": "asas",
-      "passwordcheck": "sasas"
+      "cpf": "112312312",
+      "password": "rafah27069",
+      "passwordcheck": "asdw",
+      "username": "rafaelcorradini"
     }
   ],
   "admins": [
@@ -40,9 +41,27 @@
       "username": "admin",
       "email": "wew",
       "cpf": "2222",
-      "phone": "324234",
       "password": "admin",
-      "passwordcheck": "dasdasd"
+      "passwordcheck": "admin",
+      "phone": "324234"
     }
-  ]
+  ],
+  "animals": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "name": "Thor",
+      "species": "Canina",
+      "breed": "Yorkie",
+      "age": "2"
+    },
+    {
+      "id": 3,
+      "name": "Flora",
+      "species": "Canina",
+      "breed": "Vira-lata",
+      "age": "10"
+    }
+  ],
+  "schedules": []
 }

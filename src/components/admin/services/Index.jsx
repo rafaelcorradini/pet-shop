@@ -21,8 +21,10 @@ class Services extends React.Component{
   }
 
   removeService(id) {
-    model.removeById(id, 'services');
-    this.componentDidMount();
+    model.removeById(id, 'services').then(() => {
+      this.componentDidMount();
+    });
+    
   }
 
   render() {

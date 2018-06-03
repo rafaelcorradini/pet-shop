@@ -11,7 +11,6 @@ const model = {
   auth: () => {
     let admin = JSON.parse(localStorage.getItem('jwt'));
 
-    console.log(admin);
     if (admin == null || admin == undefined || admin.username == null || admin.password == null)
       return false
 
@@ -23,7 +22,7 @@ const model = {
       });
   },
   removeById: (id, resource) => {
-    http.delete('/' + resource + '/' + id);
+    return http.delete('/' + resource + '/' + id);
   }
 }
 

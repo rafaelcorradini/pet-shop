@@ -21,8 +21,9 @@ class Admin extends React.Component{
   }
 
   removeAdmin(id) {
-    model.removeById(id, 'admins');
-    this.componentDidMount();
+    model.removeById(id, 'admins').then(() => {
+      this.componentDidMount();
+    });
   }
 
   render() {
@@ -32,20 +33,20 @@ class Admin extends React.Component{
         <td>{admin.username}</td>
         <td>{admin.cpf}</td>
         <td>
-          <Link to={'/admin/administrador/'+admin.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
+          <Link to={'/admin/administradores/'+admin.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
           <button onClick={this.removeAdmin.bind(this, admin.id)} className="btn-actions btn-remove" title="excluir"><i className="fas fa-trash-alt"></i></button>
         </td>
       </tr>
     );
     return (
       <div>
-        <h1>Administrador</h1> 
-        <Link to="/admin/administrador/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
+        <h1>Administradores</h1> 
+        <Link to="/admin/administradores/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
         <table className="content-table">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nome</th>
+                    <th>Usuário</th>
                     <th>CPF</th>
                     <th>Açoes</th>
                 </tr>

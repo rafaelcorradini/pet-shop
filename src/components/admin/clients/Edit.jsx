@@ -74,10 +74,6 @@ class EditClients extends React.Component{
             <label htmlFor="password">Confirmar Senha</label>
             <input type="password" autoFocus name="passwordcheck"  value={this.state.passwordcheck} onChange={this.handleInputChange} required />
           </div>
-          <div className="form-group">
-            <label><input type="checkbox" name="offer_check" value="Offer"/></label>
-                        <span>Quero receber ofertas exclusivas</span>
-          </div>
 
           <div className="form-group">
             <button type="submit" className="btn btn-save">Salvar</button>

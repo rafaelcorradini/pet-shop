@@ -4,9 +4,11 @@ import Navbar from './share/Navbar'
 import Sidebar from './share/Sidebar'
 import Dashboard from './Dashboard'
 import Products from './products/MainProduct'
-import Services from './servicos/MainService'
+import Services from './services/MainService'
 import Clients from './clients/MainClient'
-import Admin from './administrador/MainAdministrador'
+import Admin from './admins/MainAdministrador'
+import Schedules from './schedules/MainSchedule'
+import Animals from './animals/MainAnimal'
 import model from './../../model'
 
 import { Switch, Route } from 'react-router-dom';
@@ -36,10 +38,11 @@ class MainAdmin extends React.Component{
 									<Switch>
 										<Route exact path='/admin' component={Dashboard}/>
 										<Route path='/admin/produtos' component={Products}/>
+										<Route path='/admin/agendamento' component={Schedules}/>
 										<Route path='/admin/servicos' component={Services}/>
-										<Route path='/admin/clients' component={Clients}/>
-										<Route path='/admin/administrador' component={Admin}/>
-
+										<Route path='/admin/clientes' component={Clients}/>
+										<Route path='/admin/animais' component={Animals}/>
+										<Route path='/admin/administradores' component={Admin}/>
 									</Switch>
 								</main>
     					</section>

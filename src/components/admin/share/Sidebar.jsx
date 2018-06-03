@@ -24,7 +24,8 @@ class Sidebar extends React.Component {
 						<li><Link to="/admin/produtos" className={this.state.path === 'produtos' ? 'active': ''}>Produtos</Link></li>
 						<li><Link to="/admin/servicos" className={this.state.path === 'servicos' ? 'active': ''}>Serviços</Link></li>
 						<li><Link to="/admin/clients" className={this.state.path === 'clients' ? 'active': ''}>Clientes</Link></li>
-						<li><Link to="/admin/administrador" className={this.state.path === 'administrador' ? 'active': ''}>Administradores</Link></li>
+						<li><Link to="/admin/animais" className={this.state.path === 'animais' ? 'active': ''}>Animais</Link></li>
+						<li><Link to="/admin/administradores" className={this.state.path === 'administradores' ? 'active': ''}>Administradores</Link></li>
 					</ul>
 				</nav>
 			</aside>
