@@ -69,7 +69,7 @@ class Index extends React.Component {
 
 		http.post('/schedules', this.state)
 			.then(res => {
-				this.props.history.push('/admin/agendamentos');
+				this.props.history.push('/client/schedules');
 			});
 	}
 
@@ -87,7 +87,7 @@ class Index extends React.Component {
 				<td>{moment(moment.utc(Date.parse(schedule.date))).format('DD/MM/YYYY')}</td>
 				<td>{schedule.time}</td>
 				<td>
-					<Link to={'/admin/agendamentos/' + schedule.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
+					<Link to={'/client/schedules/' + schedule.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
 					<button onClick={this.removeSchedule.bind(this, schedule.id)} className="btn-actions btn-remove" title="excluir"><i className="fas fa-trash-alt"></i></button>
 				</td>
 			</tr>

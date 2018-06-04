@@ -43,7 +43,7 @@ class EditAnimal extends React.Component{
   
     http.put('/animals/'+data.id, data)
       .then(res => {
-        this.props.history.push('/admin/agendamentos');
+        this.props.history.push('/client/schedules');
       });
   }
 
@@ -70,7 +70,7 @@ class EditAnimal extends React.Component{
           </div>
           <div className="form-group">
             <button type="submit" className="btn btn-save">Salvar</button>
-            <Link to="/admin/agendamentos" className="btn btn-cancel">Cancelar</Link>
+            <Link to="/client/schedules" className="btn btn-cancel">Cancelar</Link>
           </div>
 				</form>
 			</div>

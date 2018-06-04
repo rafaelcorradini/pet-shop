@@ -34,7 +34,7 @@ class Schedules extends React.Component{
         <td>{schedule.day}</td>
         <td>{schedule.time}</td>
         <td>
-          <Link to={'/admin/agendamentos/'+schedule.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
+          <Link to={'/client/schedules/'+schedule.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
           <button onClick={this.removeSchedule.bind(this, schedule.id)} className="btn-actions btn-remove" title="excluir"><i className="fas fa-trash-alt"></i></button>
         </td>
       </tr>
@@ -42,7 +42,7 @@ class Schedules extends React.Component{
     return (
       <div>
         <h1>Agendamentos</h1> 
-        <Link to="/admin/agendamentos/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
+        <Link to="/client/schedules/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
         <table className="content-table">
             <thead>
                 <tr>

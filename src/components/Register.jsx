@@ -43,7 +43,7 @@ class Register extends React.Component{
       password.setCustomValidity("As senhas não conferem.");
       return;
     } else {
-      http.put('/clients', this.state)
+      http.post('/clients', this.state)
       .then(res => {
         this.props.history.push('/login');
       });
