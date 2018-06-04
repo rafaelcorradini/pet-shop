@@ -3,7 +3,9 @@ import { Switch, Route } from 'react-router-dom';
 import './Reset.css';
 import Home from './Home';
 import MainAdmin from './admin/MainAdmin';
+import MainClient from './client/MainClient';
 import Login from './Login';
+import Register from './Register';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -17,7 +19,9 @@ class Main extends Component {
 				<Switch>
 					<Route exact path='/' component={Home}/>
 					<Route path='/admin' component={MainAdmin}/>
+					<Route path='/client' component={MainClient}/>
 					<Route path='/login' component={Login}/>
+					<Route path='/register' component={Register}/>
 				</Switch>
 			</main>
 		)

@@ -35,17 +35,17 @@
     {
       "id": 2,
       "name": "Rafael",
-      "email": "rafacunhadini@gmail.com",
+      "email": "ale@gmail.com",
       "cpf": "43675001873",
-      "password": "rafah270698",
-      "passwordcheck": "rafah270698"
+      "password": "usp123",
+      "passwordcheck": "usp123"
     }
   ],
   "admins": [
     {
       "id": 1,
       "name": "Rafael",
-      "email": "rafacunhadini@gmail.com",
+      "email": "rafa@gmail.com",
       "cpf": "2222",
       "password": "admin",
       "passwordcheck": "admin",

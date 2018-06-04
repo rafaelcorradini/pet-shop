@@ -1,0 +1,44 @@
+.register {
+    width: 100%;
+    text-align: center;
+}
+
+.register h1 {
+    font-size: 18px;
+    padding: 2em;
+}
+
+.register form {
+    width: 300px;
+    display: inline-block;
+}
+
+.register form input {
+    margin: 0.5em 0;
+    width: 100%;
+}
+
+.register button {
+    margin-top: 1em;
+    width: 100%;
+}
+
+.register a {
+    display: block;
+    margin-top: 2em;
+    color: #99907D;
+}
+
+.register a:hover {
+    color: rgb(102, 96, 87);
+}
+
+/* mobile */
+ 
+@media screen and (max-width: 760px) {
+    .register form {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 1em;
+    }
+}

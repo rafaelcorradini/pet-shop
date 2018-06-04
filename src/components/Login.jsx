@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import http from './../http';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 class Login extends Component {
@@ -9,7 +10,23 @@ class Login extends Component {
     this.state = {
       email: null,
       password: null,
+      admins: [],
+      clients: []
     };
+
+    http.get('/admins')
+      .then(res => {
+        this.setState({
+           admins: res.data
+        });
+    });
+
+    http.get('/clients')
+      .then(res => {
+        this.setState({
+           clients: res.data
+        });
+      });
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,11 +47,19 @@ class Login extends Component {
   
     http.get('/admins?email='+this.state.email)
       .then(res => {
-				if (res.data.length > 0) {
+				if (res.data.length > 0 /*&& res.data[0].password === this.state.password*/) {
 					localStorage.setItem('jwt', JSON.stringify(res.data[0]));
 					this.props.history.push('/admin');
 				}	
-      });
+    });
+
+    http.get('/clients?email='+this.state.email)
+      .then(res => {
+        if (res.data.length > 0 /*&& res.data[0].password === this.state.password*/) {
+          localStorage.setItem('jwt', JSON.stringify(res.data[0]));
+          this.props.history.push('/client');
+        } 
+    });
   }
 	
 	render() {
@@ -45,6 +70,7 @@ class Login extends Component {
 					<input type="text" name="email" autoFocus value={this.state.email} onChange={this.handleInputChange} required placeholder="E-mail" />
 					<input type="password" name="password" autoFocus value={this.state.password} onChange={this.handleInputChange} required placeholder="Senha" />
 					<button type="submit" class="btn">Entrar</button>
+          <Link to = "/register" class="btn">Ainda não sou cliente</Link>
 				</form>
 			</section>
 		);
