@@ -21,7 +21,14 @@
     {
       "id": 1,
       "name": "asdfasdf",
-      "description": "asdfasdf"
+      "description": "asdfasdf",
+      "duration": "01:30"
+    },
+    {
+      "id": 2,
+      "name": "Consulta",
+      "description": "asdfasdfasdf",
+      "duration": "01:00"
     }
   ],
   "clients": [
@@ -55,5 +62,13 @@
       "age": "10"
     }
   ],
-  "schedules": []
+  "schedules": [
+    {
+      "id": 1,
+      "animalId": 3,
+      "serviceId": 1,
+      "date": "2018-06-03",
+      "time": "10:00"
+    }
+  ]
 }

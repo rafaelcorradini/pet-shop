@@ -58,6 +58,10 @@ class EditServices extends React.Component{
 						<label htmlFor="description">Descrição</label>
 						<textarea name="description" cols="30" rows="10" value={this.state.description} onChange={this.handleInputChange}></textarea>
 					</div>
+          <div className="form-group">
+						<label htmlFor="duration">Duração(Horas:minutos)</label>
+						<input type="time" name="duration" value={this.state.duration} onChange={this.handleInputChange} required />
+					</div>
 					<div className="form-group">
 						<button type="submit" className="btn btn-save">Salvar</button>
 						<Link to="/admin/servicos" className="btn btn-cancel">Cancelar</Link>

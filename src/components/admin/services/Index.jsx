@@ -33,6 +33,7 @@ class Services extends React.Component{
         <td>{service.id}</td>
         <td>{service.name}</td>
         <td>{service.description}</td>
+        <td>{service.duration}</td>
         <td>
           <Link to={'/admin/servicos/'+service.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
           <button onClick={this.removeService.bind(this, service.id)} className="btn-actions btn-remove" title="excluir"><i className="fas fa-trash-alt"></i></button>
@@ -49,6 +50,7 @@ class Services extends React.Component{
                     <th>#</th>
                     <th>Nome</th>
                     <th>Descrição</th>
+                    <th>Duração(Horas:minutos)</th>
                     <th>Açoes</th>
                 </tr>
             </thead>

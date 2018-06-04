@@ -43,7 +43,7 @@ class EditAnimal extends React.Component{
   
     http.put('/animals/'+data.id, data)
       .then(res => {
-        this.props.history.push('/admin/agendamento');
+        this.props.history.push('/admin/agendamentos');
       });
   }
 
@@ -58,19 +58,19 @@ class EditAnimal extends React.Component{
           </div>
            <div className="form-group">
             <label htmlFor="species">Espécie</label>
-            <input type="text" autoFocus name="species" value={this.state.species} onChange={this.handleInputChange} required />
+            <input type="text" name="species" value={this.state.species} onChange={this.handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="breed">Raça</label>
-            <input type="number" autoFocus name="breed"  value={this.state.breed} onChange={this.handleInputChange} required />
+            <input type="number" name="breed"  value={this.state.breed} onChange={this.handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="age">Idade</label>
-            <input type="number" autoFocus name="age"  value={this.state.age} onChange={this.handleInputChange} required />
+            <input type="number" name="age"  value={this.state.age} onChange={this.handleInputChange} required />
           </div>
           <div className="form-group">
             <button type="submit" className="btn btn-save">Salvar</button>
-            <Link to="/admin/agendamento" className="btn btn-cancel">Cancelar</Link>
+            <Link to="/admin/agendamentos" className="btn btn-cancel">Cancelar</Link>
           </div>
 				</form>
 			</div>

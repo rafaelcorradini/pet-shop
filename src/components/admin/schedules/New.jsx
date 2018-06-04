@@ -55,7 +55,7 @@ class NewSchedule extends React.Component{
   
     http.post('/schedules', data)
       .then(res => {
-        this.props.history.push('/admin/agendamento');
+        this.props.history.push('/admin/agendamentos');
       });
   }
 
@@ -75,21 +75,21 @@ class NewSchedule extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="animalID">Animal</label>
-            <select name="animalID" value={this.state.animalID} required onChange={this.handleInputChange}>
+            <select name="animalID" value={this.state.animalId} required onChange={this.handleInputChange}>
               <option value="">Selecione um animal</option>
               {animals}
             </select>
           </div>
           <div className="form-group">
             <label htmlFor="serviceID">Serviço</label>
-            <select name="serviceID" value={this.state.serviceID} required onChange={this.handleInputChange}>
+            <select name="serviceID" value={this.state.serviceId} required onChange={this.handleInputChange}>
               <option value="">Selecione um serviço</option>
               {services}
             </select>
           </div>
           <div className="form-group">
             <button type="submit" className="btn btn-save">Salvar</button>
-            <Link to="/admin/agendamento" className="btn btn-cancel">Cancelar</Link>
+            <Link to="/admin/agendamentos" className="btn btn-cancel">Cancelar</Link>
           </div>
 
         </form>

@@ -8,7 +8,8 @@ class NewService extends React.Component{
     this.state = {
       id: null,
       name: null,
-      description: null
+      description: null,
+      duration: null
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -55,6 +56,10 @@ class NewService extends React.Component{
 					<div className="form-group">
 						<label htmlFor="name">Nome</label>
 						<input type="text" autoFocus name="name" value={this.state.name} onChange={this.handleInputChange} required />
+					</div>
+          <div className="form-group">
+						<label htmlFor="duration">Duração(Horas:minutos)</label>
+						<input type="time" name="duration" value={this.state.duration} onChange={this.handleInputChange} required />
 					</div>
 					<div className="form-group">
 						<label htmlFor="description">Descrição</label>

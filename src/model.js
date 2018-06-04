@@ -1,12 +1,12 @@
 import http from './http';
 
 const model = {
-  getById: (id, resource) => {
-    // return collection.map((item) => {
-    //   if(item.id == id) {
-    //     return item;
-    //   }
-    // })[0];
+  getById: (id, collection) => {
+    return collection.map((item) => {
+      if(item.id == id) {
+        return item;
+      }
+    })[0];
   },
   auth: () => {
     let admin = JSON.parse(localStorage.getItem('jwt'));
