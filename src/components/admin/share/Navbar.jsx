@@ -6,27 +6,25 @@ class Navbar extends Component {
 		super(props);
 		this.state = {
 			user: null
-		};
+    };
+    this.logout = this.logout.bind(this);
 	}
-	componentDidMount() {
-    // http.get('/admins/'+window.localStorage('user_'))
-    //   .then(res => {
-    //     this.setState({
-    //        clients: res.data
-    //     });
-    //   });
+	logout() {
+    localStorage.removeItem('jwt');
+    this.props.history.push('/login');
   }
   render() {
     return (
       <header className="navbar">
 				<section className="navbar-left">
-					<a className="navbar-logo" href="..../index.html">PetShop.com</a>
+					<a className="navbar-logo" href="/">PetShop.com</a>
 				</section>
 				
-				<button className="btn-dropdown btn-user">
-					
-					<i className="fas fa-cogs"></i>
-				</button>
+        <div>
+          <button onClick={this.logout} className="btn-dropdown btn-user">
+            Logout
+          </button>
+        </div>
       </header>
     );
   }

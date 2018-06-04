@@ -10,7 +10,8 @@ class NewAnimal extends React.Component{
       name: null,
       species: null,
       breed: null,
-      age: null
+      age: null,
+      clientId: JSON.parse(localStorage.getItem('jwt')).id
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -36,7 +37,7 @@ class NewAnimal extends React.Component{
   
     http.post('/animals', data)
       .then(res => {
-        this.props.history.push('/admin/animais');
+        this.props.history.push('/cliente/animais');
       });
   }
 
@@ -65,7 +66,7 @@ class NewAnimal extends React.Component{
           </div>
           <div className="form-group">
             <button type="submit" className="btn btn-save">Salvar</button>
-            <Link to="/admin/animais" className="btn btn-cancel">Cancelar</Link>
+            <Link to="/cliente/animais" className="btn btn-cancel">Cancelar</Link>
           </div>
 
         </form>

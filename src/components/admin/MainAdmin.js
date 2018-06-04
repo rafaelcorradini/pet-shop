@@ -23,15 +23,13 @@ class MainAdmin extends React.Component {
 		super(props);
 	}
 	componentDidMount() {
-		model.auth().then((response) => {
-			if (response == false)
-				this.props.history.push('/login');
-		});
+		if (!model.auth('admin'))
+			this.props.history.push('/login');
 	}
 	render() {
 		return (
 			<div>
-				<Navbar />
+				<Navbar history={this.props.history} />
 				<div className='container'>
 					<Sidebar path={this.props.location} />
 					<section className='content'>

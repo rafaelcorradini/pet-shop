@@ -7,17 +7,29 @@ class Animals extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      animals: []
+      animals: [],
+      clients: []
     };
   }
 
   componentDidMount() {
-    http.get('/animals')
-      .then(res => {
-        this.setState({
-           animals: res.data
+    http.get('/clients')
+			.then(res => {
+				this.setState({
+					clients: res.data
         });
-      });
+
+        http.get('/animals')
+          .then(res => {
+            this.setState({
+              animals: res.data
+            });
+          });
+      }); 
+
+    
+
+     
   }
 
   removeAnimal(id) {
@@ -32,7 +44,7 @@ class Animals extends React.Component{
         <td>{animal.id}</td>
         <td>{animal.name}</td>
         <td>{animal.species}</td>
-        <td>{animal.breed}</td>
+        <td>{model.getById(animal.clientId, this.state.clients).name}</td>
         <td>
           <Link to={'/admin/animais/'+animal.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
           <button onClick={this.removeAnimal.bind(this, animal.id)} className="btn-actions btn-remove" title="excluir"><i className="fas fa-trash-alt"></i></button>
@@ -49,7 +61,7 @@ class Animals extends React.Component{
                     <th>#</th>
                     <th>Nome</th>
                     <th>Especie</th>
-                    <th>Raça</th>
+                    <th>Cliente</th>
                     <th>Açoes</th>
                 </tr>
             </thead>

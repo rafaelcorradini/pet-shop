@@ -36,6 +36,9 @@ class Login extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    let emailInput = document.getElementsByName("email")[0];
+
+    emailInput.setCustomValidity("");
 
     this.setState({
       [name]: value
@@ -44,21 +47,27 @@ class Login extends Component {
 
 	handleSubmit(event) {
     event.preventDefault(); 
-  
+    let emailInput = document.getElementsByName("email")[0];
     http.get('/admins?email='+this.state.email)
       .then(res => {
-				if (res.data.length > 0 /*&& res.data[0].password === this.state.password*/) {
+				if (res.data.length > 0 && res.data[0].password == this.state.password) {
+          res.data[0].type = 'admin';
 					localStorage.setItem('jwt', JSON.stringify(res.data[0]));
 					this.props.history.push('/admin');
-				}	
+				}	else {          
+          emailInput.setCustomValidity("Login ou senha inválidos.");
+        }
     });
 
     http.get('/clients?email='+this.state.email)
       .then(res => {
-        if (res.data.length > 0 /*&& res.data[0].password === this.state.password*/) {
+        if (res.data.length > 0 && res.data[0].password == this.state.password) {
+          res.data[0].type = 'client';
           localStorage.setItem('jwt', JSON.stringify(res.data[0]));
-          this.props.history.push('/client');
-        } 
+          this.props.history.push('/cliente');
+        } else {
+          emailInput.setCustomValidity("Login ou senha inválidos.");
+        }
     });
   }
 	

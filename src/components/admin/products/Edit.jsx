@@ -7,9 +7,7 @@ class ProductsEdit extends React.Component{
     super(props);
     this.state = {
       id: null,
-      name: null,
-      categoryId: null,
-      categories: []
+      name: null
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -21,13 +19,6 @@ class ProductsEdit extends React.Component{
       .then(res => {
         this.setState(res.data);
       });
-
-    http.get('/categories')
-      .then(res => {
-        this.setState({
-          categories: res.data
-        });
-      });  
   }
 
   handleInputChange(event) {
@@ -54,9 +45,6 @@ class ProductsEdit extends React.Component{
   }
 
   render () {
-    const categories = this.state.categories.map((category) =>
-      <option value={category.id}>{category.name}</option>
-    );
     return (
       <div>
 				<h1>Cadastrar produto</h1>
@@ -64,12 +52,6 @@ class ProductsEdit extends React.Component{
 					<div className="form-group">
 						<label htmlFor="name">Nome</label>
 						<input type="text" name="name" autoFocus value={this.state.name} onChange={this.handleInputChange} required />
-					</div>
-					<div className="form-group">
-						<label htmlFor="categoryId">Categoria</label>
-						<select name="categoryId" value={this.state.categoryId} onChange={this.handleInputChange}>
-							{categories}
-						</select>
 					</div>
 					<div className="form-group">
 						<label htmlFor="description">Descrição</label>

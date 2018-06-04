@@ -7,22 +7,11 @@ class ProductNew extends React.Component{
     super(props);
     this.state = {
       id: null,
-      name: null,
-      categoryId: null,
-      categories: []
+      name: null
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount() {
-    http.get('/categories')
-      .then(res => {
-        this.setState({
-          categories: res.data
-        });
-      });
   }
 
   handleInputChange(event) {
@@ -49,9 +38,6 @@ class ProductNew extends React.Component{
   }
 
   render () {
-    const categories = this.state.categories.map((category) =>
-      <option value={category.id}>{category.name}</option>
-    );
     return (
       <div>
 				<h1>Cadastrar produto</h1>
@@ -59,13 +45,6 @@ class ProductNew extends React.Component{
 					<div className="form-group">
 						<label htmlFor="name">Nome</label>
 						<input type="text" autoFocus name="name" value={this.state.name} onChange={this.handleInputChange} required />
-					</div>
-					<div className="form-group">
-						<label htmlFor="categoryId">Categoria</label>
-						<select name="categoryId" value={this.state.categoryId} required onChange={this.handleInputChange}>
-              <option value="">Selecione uma categoria</option>
-							{categories}
-						</select>
 					</div>
 					<div className="form-group">
 						<label htmlFor="description">Descrição</label>

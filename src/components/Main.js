@@ -17,9 +17,9 @@ class Main extends Component {
 		return (
 			<main>
 				<Switch>
-					<Route exact path='/' component={Home}/>
+					<Route exact path='/' component={Login}/>
 					<Route path='/admin' component={MainAdmin}/>
-					<Route path='/client' component={MainClient}/>
+					<Route path='/cliente' component={MainClient}/>
 					<Route path='/login' component={Login}/>
 					<Route path='/register' component={Register}/>
 				</Switch>

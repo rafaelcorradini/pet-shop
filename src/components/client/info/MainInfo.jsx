@@ -1,6 +1,5 @@
 import React from 'react';
-import Index from './Index'
-import New from './New'
+import Edit from './Edit'
 
 import EditInfo from './Edit'
 import { Switch, Route } from 'react-router-dom';
@@ -10,9 +9,7 @@ class Main extends React.Component{
 		return (
       <main>
         <Switch>
-          <Route exact path='/client/info' component={Index}/>
-          <Route exact path='/client/info/novo' component={New}/>
-          <Route exact path='/client/info/:id' component={EditInfo}/>
+          <Route exact path='/cliente/info' component={Edit}/>
         </Switch>
       </main>
 			

@@ -20,7 +20,6 @@ class Sidebar extends React.Component {
 				<nav>
 					<ul>
 						<li><Link to="/admin" className={this.state.path === undefined ? 'active': ''}>Dashboard</Link></li>
-						<li><Link to="/admin/categorias" className={this.state.path === 'categorias' ? 'active': ''}>Categorias</Link></li>
 						<li><Link to="/admin/produtos" className={this.state.path === 'produtos' ? 'active': ''}>Produtos</Link></li>
 						<li><Link to="/admin/servicos" className={this.state.path === 'servicos' ? 'active': ''}>Serviços</Link></li>
 						<li><Link to="/admin/clientes" className={this.state.path === 'clientes' ? 'active': ''}>Clientes</Link></li>

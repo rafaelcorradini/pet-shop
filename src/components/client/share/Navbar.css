@@ -45,9 +45,10 @@
 }
 
 .btn-user {
+	display: block;
 	color: #fff;
 	font-weight: 700;
-	padding: 0 2em;
+	padding: 1.2em 2em;
 }
 
 .btn-user i {

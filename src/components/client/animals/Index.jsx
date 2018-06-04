@@ -12,7 +12,7 @@ class Animals extends React.Component{
   }
 
   componentDidMount() {
-    http.get('/animals')
+    http.get('/animals?clientId=' + JSON.parse(localStorage.getItem('jwt')).id)
       .then(res => {
         this.setState({
            animals: res.data
@@ -34,7 +34,7 @@ class Animals extends React.Component{
         <td>{animal.species}</td>
         <td>{animal.breed}</td>
         <td>
-          <Link to={'/admin/animais/'+animal.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
+          <Link to={'/cliente/animais/'+animal.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
           <button onClick={this.removeAnimal.bind(this, animal.id)} className="btn-actions btn-remove" title="excluir"><i className="fas fa-trash-alt"></i></button>
         </td>
       </tr>
@@ -42,7 +42,7 @@ class Animals extends React.Component{
     return (
       <div>
         <h1>Animais</h1> 
-        <Link to="/admin/animais/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
+        <Link to="/cliente/animais/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
         <table className="content-table">
             <thead>
                 <tr>

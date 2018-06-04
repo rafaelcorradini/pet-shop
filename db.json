@@ -3,8 +3,12 @@
     {
       "id": 1,
       "name": "sdsd",
-      "categoryId": "2",
       "description": "sdsds"
+    },
+    {
+      "id": 2,
+      "name": "teste2",
+      "description": "bbbbbbbbbb"
     }
   ],
   "categories": [
@@ -39,6 +43,14 @@
       "cpf": "43675001873",
       "password": "usp123",
       "passwordcheck": "usp123"
+    },
+    {
+      "id": 3,
+      "name": "larissa",
+      "email": "larissa@cliente",
+      "cpf": "234234234",
+      "password": "cliente",
+      "passwordcheck": "cliente"
     }
   ],
   "admins": [
@@ -68,7 +80,24 @@
       "name": "Flora",
       "species": "Canina",
       "breed": "Vira-lata",
-      "age": "10"
+      "age": "11",
+      "clientId": 3
+    },
+    {
+      "id": 4,
+      "name": "bob",
+      "species": "canina",
+      "breed": "Vira lata",
+      "age": "10",
+      "clientId": 2
+    },
+    {
+      "id": 5,
+      "name": "asdfasd",
+      "species": "asdfasdf",
+      "breed": "asdfasdf",
+      "age": "123123123",
+      "clientId": 3
     }
   ],
   "schedules": [
@@ -94,18 +123,25 @@
       "date": "2018-06-05"
     },
     {
-      "id": 4,
-      "animalId": 3,
-      "serviceId": 2,
-      "time": "15:00",
-      "date": "2018-06-04"
-    },
-    {
       "id": 5,
       "animalId": 3,
       "serviceId": 2,
       "time": "08:00",
       "date": "2018-06-04"
+    },
+    {
+      "id": 6,
+      "animalId": 4,
+      "serviceId": 2,
+      "time": "11:00",
+      "date": "2018-06-04"
+    },
+    {
+      "id": 7,
+      "animalId": 5,
+      "serviceId": 2,
+      "time": "10:00",
+      "date": "2018-06-05"
     }
   ]
 }

@@ -5,6 +5,7 @@ import Sidebar from './share/Sidebar'
 import Dashboard from './Dashboard'
 import Animals from './animals/MainAnimal'
 import Schedules from './schedules/MainSchedule'
+import Info from './info/MainInfo'
 /*import Clients from './clients/MainClient'
 import Categories from './categories/MainCategory'
 import Admin from './administrador/MainAdministrador'*/
@@ -22,22 +23,23 @@ class MainClient extends React.Component{
 		super(props);
 	}
 	componentDidMount() {
-		if (!model.auth())
+		if (!model.auth('client'))
 			this.props.history.push('/login');
   }
 	render (){
 		return (
 			<div>
-    			<Navbar/>
+    			<Navbar history={this.props.history}/>
    				<div className='container'>
 					<Sidebar path={this.props.location}/>
    				 	<section className='content'>
    				 		<section className='wrapper'>
 								<main>
 									<Switch>
-										<Route exact path='/client' component={Dashboard}/>
-										<Route path='/client/animals' component={Animals}/>
-										<Route path='/client/schedules' component={Schedules}/>
+										<Route exact path='/cliente' component={Dashboard}/>
+										<Route path='/cliente/animais' component={Animals}/>
+										<Route path='/cliente/agendamentos' component={Schedules}/>
+										<Route path='/cliente/info' component={Info}/>
 									</Switch>
 								</main>
     					</section>

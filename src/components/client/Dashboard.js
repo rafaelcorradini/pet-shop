@@ -30,9 +30,10 @@ class Dashboard extends React.Component{
       <tr>
         <td>{animal.id}</td>
         <td>{animal.name}</td>
-        <td>{animal.categoryId}</td>
+        <td>{animal.species}</td>
+        <td>{animal.breed}</td>
         <td>
-          <Link to={'/client/animals/'+animal.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
+          <Link to={'/cliente/animais/'+animal.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
           <button onClick={this.removeAnimal.bind(this, animal.id)} className="btn-actions btn-remove" title="excluir"><i className="fas fa-trash-alt"></i></button>
         </td>
       </tr>
@@ -40,7 +41,7 @@ class Dashboard extends React.Component{
     return (
       <div>
         <h1>Animais</h1> 
-        <Link to="/client/animals/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
+        <Link to="/cliente/animais/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
         <table className="content-table">
             <thead>
                 <tr>
