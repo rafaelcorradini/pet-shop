@@ -51,6 +51,15 @@
       "passwordcheck": "admin",
       "username": "admin",
       "phone": "324234"
+    },
+    {
+      "id": 2,
+      "name": "admin",
+      "email": "admin@admin",
+      "cpf": "1231231",
+      "phone": "23123123",
+      "password": "admin",
+      "passwordcheck": "admin"
     }
   ],
   "animals": [
@@ -69,6 +78,34 @@
       "serviceId": 1,
       "date": "2018-06-03",
       "time": "10:00"
+    },
+    {
+      "id": 2,
+      "animalId": 3,
+      "serviceId": 1,
+      "time": "12:00",
+      "date": "2018-06-04"
+    },
+    {
+      "id": 3,
+      "animalId": 3,
+      "serviceId": 1,
+      "time": "08:30",
+      "date": "2018-06-05"
+    },
+    {
+      "id": 4,
+      "animalId": 3,
+      "serviceId": 2,
+      "time": "15:00",
+      "date": "2018-06-04"
+    },
+    {
+      "id": 5,
+      "animalId": 3,
+      "serviceId": 2,
+      "time": "08:00",
+      "date": "2018-06-04"
     }
   ]
 }

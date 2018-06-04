@@ -1,12 +1,9 @@
 import http from './http';
+import moment from 'moment';
 
 const model = {
   getById: (id, collection) => {
-    return collection.map((item) => {
-      if(item.id == id) {
-        return item;
-      }
-    })[0];
+    return collection.filter(item => item.id === id)[0];
   },
   auth: () => {
     let admin = JSON.parse(localStorage.getItem('jwt'));
@@ -24,6 +21,12 @@ const model = {
   },
   removeById: (id, resource) => {
     return http.delete('/' + resource + '/' + id);
+  },
+  showDuration: (time, duration) => {
+    let total = moment(time, "HH:mm").add(parseInt(duration.split(':')[0]), 'hours').format('HH:mm');
+    total = moment(total, "HH:mm").add(parseInt(duration.split(':')[1]), 'minutes').format('HH:mm');
+    return total
+
   }
 }
 

@@ -45,7 +45,7 @@ class NewAdmin extends React.Component{
       password.setCustomValidity("");
     }
   
-    http.put('/admins', this.state)
+    http.post('/admins', this.state)
       .then(res => {
         this.props.history.push('/admin/administradores');
       });

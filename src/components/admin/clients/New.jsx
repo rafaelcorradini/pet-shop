@@ -44,7 +44,7 @@ class ProductNew extends React.Component{
       password.setCustomValidity("");
     }
   
-    http.put('/clients', this.state)
+    http.post('/clients', this.state)
       .then(res => {
         this.props.history.push('/admin/clientes');
       });
