@@ -14,10 +14,11 @@ const model = {
     if (admin == null || admin == undefined || admin.email == null || admin.password == null)
       return false;
 
-    return http.get('/admins?email='+ admin.email +'&?password='+ admin.password)
+    return http.get('/admins?email='+ admin.email)
       .then(res => {
         if (res.data.length > 0)
-          return true;
+          if (res.data[0].password == admin.password)
+            return true;
         return false;
       });
   },

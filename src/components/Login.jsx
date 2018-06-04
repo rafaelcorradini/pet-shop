@@ -7,7 +7,7 @@ class Login extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-      username: null,
+      email: null,
       password: null,
     };
 
@@ -28,7 +28,7 @@ class Login extends Component {
 	handleSubmit(event) {
     event.preventDefault(); 
   
-    http.get('/admins?username='+this.state.username+'&?password='+this.state.password)
+    http.get('/admins?email='+this.state.email)
       .then(res => {
 				if (res.data.length > 0) {
 					localStorage.setItem('jwt', JSON.stringify(res.data[0]));
@@ -42,7 +42,7 @@ class Login extends Component {
 			<section className="login">
 				<h1>Login</h1>
 				<form onSubmit={this.handleSubmit}>
-					<input type="text" name="username" autoFocus value={this.state.username} onChange={this.handleInputChange} required placeholder="Usuário" />
+					<input type="text" name="email" autoFocus value={this.state.email} onChange={this.handleInputChange} required placeholder="E-mail" />
 					<input type="password" name="password" autoFocus value={this.state.password} onChange={this.handleInputChange} required placeholder="Senha" />
 					<button type="submit" class="btn">Entrar</button>
 				</form>
