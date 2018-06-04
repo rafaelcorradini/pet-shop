@@ -7,7 +7,7 @@ class EditAdmins extends React.Component{
     super(props);
     this.state = {
       id: null,
-      username: null,
+      name: null,
       email: null,
       cpf: null,
       password: null,
@@ -43,7 +43,6 @@ class EditAdmins extends React.Component{
   handleSubmit(event) {
     event.preventDefault();
 
-    let data = {};
     let password = document.getElementsByName("passwordcheck")[0];
     
     if(this.state.password != this.state.passwordcheck) {
@@ -65,29 +64,29 @@ class EditAdmins extends React.Component{
         <h1>Editar Cliente</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Usuário</label>
-            <input type="text" autoFocus name="username" value={this.state.username} onChange={this.handleInputChange} required />
+            <label htmlFor="name">Nome</label>
+            <input type="text" autoFocus name="name" value={this.state.name} onChange={this.handleInputChange} required />
           </div>
            <div className="form-group">
             <label htmlFor="email">E-Mail</label>
-            <input type="text" autoFocus name="email" value={this.state.email} onChange={this.handleInputChange} required />
+            <input type="email" name="email" value={this.state.email} onChange={this.handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="cpf">CPF</label>
-            <input type="number" autoFocus name="cpf"  value={this.state.cpf} onChange={this.handleInputChange} required />
+            <input type="number" name="cpf"  value={this.state.cpf} onChange={this.handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="password">Senha</label>
-            <input type="password" autoFocus name="password" value={this.state.password} onChange={this.handleInputChange} required />
+            <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} required />
           </div>
            <div className="form-group">
             <label htmlFor="passwordcheck">Confirmar Senha</label>
-            <input type="password" autoFocus name="passwordcheck" value={this.state.passwordcheck} onChange={this.handleInputChange} required />
+            <input type="password" name="passwordcheck" value={this.state.passwordcheck} onChange={this.handleInputChange} required />
           </div>
 
           <div className="form-group">
             <button type="submit" className="btn btn-save">Salvar</button>
-            <Link to="/admin/clients" className="btn btn-cancel">Cancelar</Link>
+            <Link to="/admin/administradores" className="btn btn-cancel">Cancelar</Link>
           </div>
 
         </form>

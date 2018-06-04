@@ -38,7 +38,7 @@ class MainAdmin extends React.Component{
 									<Switch>
 										<Route exact path='/admin' component={Dashboard}/>
 										<Route path='/admin/produtos' component={Products}/>
-										<Route path='/admin/agendamento' component={Schedules}/>
+										<Route path='/admin/agendamentos' component={Schedules}/>
 										<Route path='/admin/servicos' component={Services}/>
 										<Route path='/admin/clientes' component={Clients}/>
 										<Route path='/admin/animais' component={Animals}/>

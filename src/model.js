@@ -11,14 +11,14 @@ const model = {
   auth: () => {
     let admin = JSON.parse(localStorage.getItem('jwt'));
 
-    if (admin == null || admin == undefined || admin.username == null || admin.password == null)
-      return false
+    if (admin == null || admin == undefined || admin.email == null || admin.password == null)
+      return false;
 
-    return http.get('/admins?username='+ admin.username +'&?password='+ admin.password)
+    return http.get('/admins?email='+ admin.email +'&?password='+ admin.password)
       .then(res => {
         if (res.data.length > 0)
-          return true
-        return false  
+          return true;
+        return false;
       });
   },
   removeById: (id, resource) => {

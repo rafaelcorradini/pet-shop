@@ -26,35 +26,27 @@
   ],
   "clients": [
     {
-      "id": 1,
-      "name": "21212",
-      "email": "21212",
-      "cpf": "112312312",
-      "password": "rafah27069",
-      "passwordcheck": "asdw",
-      "username": "rafaelcorradini"
+      "id": 2,
+      "name": "Rafael",
+      "email": "rafacunhadini@gmail.com",
+      "cpf": "43675001873",
+      "password": "rafah270698",
+      "passwordcheck": "rafah270698"
     }
   ],
   "admins": [
     {
       "id": 1,
-      "username": "admin",
-      "email": "wew",
+      "name": "Rafael",
+      "email": "rafacunhadini@gmail.com",
       "cpf": "2222",
       "password": "admin",
       "passwordcheck": "admin",
+      "username": "admin",
       "phone": "324234"
     }
   ],
   "animals": [
-    {
-      "id": 1,
-      "clientId": 1,
-      "name": "Thor",
-      "species": "Canina",
-      "breed": "Yorkie",
-      "age": "2"
-    },
     {
       "id": 3,
       "name": "Flora",

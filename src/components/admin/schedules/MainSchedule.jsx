@@ -10,9 +10,9 @@ class Main extends React.Component{
 		return (
       <main>
         <Switch>
-          <Route exact path='/admin/agendamento' component={Index}/>
-          <Route exact path='/admin/agendamento/novo' component={New}/>
-          <Route exact path='/admin/agendamento/:id' component={Edit}/>
+          <Route exact path='/admin/agendamentos' component={Index}/>
+          <Route exact path='/admin/agendamentos/novo' component={New}/>
+          <Route exact path='/admin/agendamentos/:id' component={Edit}/>
         </Switch>
       </main>
 			

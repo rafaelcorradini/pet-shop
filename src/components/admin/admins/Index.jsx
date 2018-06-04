@@ -30,7 +30,8 @@ class Admin extends React.Component{
     const admins = this.state.admins.map((admin) =>
       <tr>
         <td>{admin.id}</td>
-        <td>{admin.username}</td>
+        <td>{admin.name}</td>
+        <td>{admin.email}</td>
         <td>{admin.cpf}</td>
         <td>
           <Link to={'/admin/administradores/'+admin.id} className="btn-actions btn-edit" title="editar"><i className="fas fa-edit"></i></Link>
@@ -46,7 +47,8 @@ class Admin extends React.Component{
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Usuário</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
                     <th>CPF</th>
                     <th>Açoes</th>
                 </tr>
