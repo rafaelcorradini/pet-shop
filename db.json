@@ -11,14 +11,38 @@
       "description": "bbbbbbbbbb"
     }
   ],
-  "categories": [
+  "orders": [
     {
       "id": 1,
-      "name": "Categoria teste 1"
+      "finalized": true,
+      "clientId": 3,
+      "date": "2018-06-03",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 13
+        },
+        {
+          "productId": 2,
+          "quantity": 5
+        }
+      ]
     },
     {
-      "id": 2,
-      "name": "Categoria teste 2"
+      "clientId": 3,
+      "finalized": true,
+      "date": "2018-06-05",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 6
+        },
+        {
+          "productId": 2,
+          "quantity": 5
+        }
+      ],
+      "id": 2
     }
   ],
   "services": [

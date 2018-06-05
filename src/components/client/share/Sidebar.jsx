@@ -22,6 +22,7 @@ class Sidebar extends React.Component {
 						<li><Link to="/cliente" className={this.state.path === undefined ? 'active': ''}>Dashboard</Link></li>
 						<li><Link to="/cliente/animais" className={this.state.path === 'animais' ? 'active': ''}>Animais</Link></li>
 						<li><Link to="/cliente/agendamentos" className={this.state.path === 'agendamentos' ? 'active': ''}>Realizar Agendamento</Link></li>
+						<li><Link to="/cliente/pedidos" className={this.state.path === 'pedidos' ? 'active': ''}>Pedidos</Link></li>
 						<li><Link to="/cliente/info" className={this.state.path === 'info' ? 'active': ''}>Editar cadastro</Link></li>
 					</ul>
 				</nav>

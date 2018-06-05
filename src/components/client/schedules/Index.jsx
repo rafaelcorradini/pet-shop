@@ -23,7 +23,7 @@ class Index extends React.Component {
 		this.handleInputChangeDate = this.handleInputChangeDate.bind(this);
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		http.get('/animals?clientId=' + JSON.parse(localStorage.getItem('jwt')).id)
 			.then(res => {
 				this.setState({

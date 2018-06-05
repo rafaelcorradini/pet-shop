@@ -6,6 +6,7 @@ import Dashboard from './Dashboard'
 import Animals from './animals/MainAnimal'
 import Schedules from './schedules/MainSchedule'
 import Info from './info/MainInfo'
+import Orders from './orders/MainOrder'
 /*import Clients from './clients/MainClient'
 import Categories from './categories/MainCategory'
 import Admin from './administrador/MainAdministrador'*/
@@ -39,6 +40,7 @@ class MainClient extends React.Component{
 										<Route exact path='/cliente' component={Dashboard}/>
 										<Route path='/cliente/animais' component={Animals}/>
 										<Route path='/cliente/agendamentos' component={Schedules}/>
+										<Route path='/cliente/pedidos' component={Orders}/>
 										<Route path='/cliente/info' component={Info}/>
 									</Switch>
 								</main>
