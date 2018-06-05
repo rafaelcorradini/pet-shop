@@ -8,6 +8,7 @@ import Services from './services/MainService'
 import Clients from './clients/MainClient'
 import Admin from './admins/MainAdministrador'
 import Schedules from './schedules/MainSchedule'
+import Orders from './orders/MainOrder'
 import Animals from './animals/MainAnimal'
 import model from './../../model'
 
@@ -37,6 +38,7 @@ class MainAdmin extends React.Component {
 							<main>
 								<Switch>
 									<Route exact path='/admin' component={Dashboard} />
+									<Route path='/admin/pedidos' component={Orders} />
 									<Route path='/admin/produtos' component={Products} />
 									<Route path='/admin/agendamentos' component={Schedules} />
 									<Route path='/admin/servicos' component={Services} />

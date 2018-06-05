@@ -23,7 +23,7 @@ class Index extends React.Component {
 					products: res.data
 				});
 
-				http.get('/orders?clientId=' + JSON.parse(localStorage.getItem('jwt')).id + '&finalized=true&_sort=date&_order=desc')
+				http.get('/orders?finalized=true&_sort=date&_order=desc')
 					.then(res => {
 						this.setState({
 							orders: res.data
@@ -58,7 +58,7 @@ class Index extends React.Component {
 					<td>{moment(moment.utc(Date.parse(order.date))).format('DD/MM/YYYY')}</td>
 					<td>
 						
-						<Link to={ "/cliente/pedidos/"+order.id} className="btn-actions btn-edit"><i class="fas fa-info"></i></Link>
+						<Link to={ "/admin/pedidos/"+order.id} className="btn-actions btn-edit"><i class="fas fa-info"></i></Link>
 						<button onClick={this.removeOrder.bind(this, order.id)} className="btn-actions btn-remove" title="excluir"><i className="fas fa-trash-alt"></i></button>
 					</td>
 				</tr>
@@ -71,7 +71,6 @@ class Index extends React.Component {
 		return (
 			<div>
 				<h1>Pedidos</h1>
-				<Link to="/cliente/pedidos/novo" className="btn btn-save btn-new">Cadastrar novo</Link>
 				<table className="content-table">
 					<thead>
 						<tr>
