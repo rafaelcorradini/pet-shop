@@ -6,12 +6,10 @@ class NewAnimal extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
       name: null,
       species: null,
       breed: null,
-      age: null,
-      clientId: JSON.parse(localStorage.getItem('jwt')).id
+      age: null
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -30,12 +28,8 @@ class NewAnimal extends React.Component{
 
   handleSubmit(event) {
     event.preventDefault(); 
-
-    let data = {};
-    Object.assign(data, this.state);
-    delete data.categories;
   
-    http.post('/animals', data)
+    http.post('/animals', this.state)
       .then(res => {
         this.props.history.push('/cliente/animais');
       });

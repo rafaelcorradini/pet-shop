@@ -23,7 +23,7 @@ class Index extends React.Component {
 					products: res.data
 				});
 
-				http.get('/orders?clientId=' + JSON.parse(localStorage.getItem('jwt')).id + '&finalized=true&_sort=date&_order=desc')
+				http.get('/orders?finalized=true')
 					.then(res => {
 						this.setState({
 							orders: res.data

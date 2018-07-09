@@ -7,7 +7,6 @@ class EditAnimal extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-			id: null,
 			animalId: null,
 			serviceId: null,
 			time: null,
@@ -59,20 +58,19 @@ class EditAnimal extends React.Component{
 
 		let timeInput = document.getElementsByName("time")[0];
 		let dateInput = document.getElementsByName("date")[0];
-		let dateMoment = moment(this.state.date, 'YYYY-MM-DD');
 		let timeMoment = moment(this.state.time, 'HH:mm');
-
-		if (!dateMoment.isSameOrAfter(Date.now())) {
-			dateInput.setCustomValidity("Data inválida.");
-		}
 
 		let data = {
 			id: this.state.id,
-			animalId: parseInt(this.state.animalId),
-			serviceId: parseInt(this.state.serviceId),
+			animalId: this.state.animalId,
+			serviceId: this.state.serviceId,
 			time: this.state.time,
 			date: this.state.date
 		}
+		this.state.animals.map((animal) => {
+			if (animal.id == data.animalId)
+				data.clientId = animal.clientId;
+		});
 		http.put('/schedules/'+this.state.id, data)
 			.then(res => {
         this.props.history.push('/admin/agendamentos');

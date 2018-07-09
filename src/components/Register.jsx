@@ -8,12 +8,13 @@ class Register extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
       name: null,
+      username: null,
       email: null,
       cpf: null,
       password: null,
-      passwordcheck: null
+      passwordcheck: null,
+      role: 'client'
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -43,7 +44,8 @@ class Register extends React.Component{
       password.setCustomValidity("As senhas não conferem.");
       return;
     } else {
-      http.post('/clients', this.state)
+      delete this.state.passwordcheck;
+      http.post('/register', this.state)
       .then(res => {
         this.props.history.push('/login');
       });
@@ -60,7 +62,11 @@ class Register extends React.Component{
             <label htmlFor="name">Nome</label>
             <input type="text" autoFocus name="name" value={this.state.name} onChange={this.handleInputChange} required />
           </div>
-           <div className="form-group">
+          <div className="form-group">
+            <label htmlFor="username">Usuário</label>
+            <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange} required />
+          </div>
+          <div className="form-group">
             <label htmlFor="email">E-Mail</label>
             <input type="text" name="email" value={this.state.email} onChange={this.handleInputChange} required />
           </div>

@@ -19,7 +19,7 @@ class EditClients extends React.Component{
   }
 
   componentDidMount() {
-    http.get('/clients/'+JSON.parse(localStorage.getItem('jwt')).id)
+    http.get('/users/me')
       .then(res => {
         this.setState(res.data);
       });
@@ -51,8 +51,8 @@ handleInputChange(event) {
     } else {
       password.setCustomValidity("");
     }
-
-    http.put('/clients/'+this.state.id, this.state)
+    delete this.state.passwordcheck;
+    http.put('/users/'+this.state.id, this.state)
       .then(res => {
         this.props.history.push('/cliente');
       });

@@ -8,10 +8,10 @@ class EditClients extends React.Component{
     this.state = {
       id: null,
       name: null,
+      username: null,
       email: null,
       cpf: null,
-      password: null,
-      passwordcheck: null
+      password: 'admin'
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -19,7 +19,7 @@ class EditClients extends React.Component{
   }
 
   componentDidMount() {
-    http.get('/clients/'+this.props.match.params.id)
+    http.get('/users/'+this.props.match.params.id)
       .then(res => {
         this.setState(res.data);
       });
@@ -30,9 +30,6 @@ handleInputChange(event) {
   const target = event.target;
   const value = target.type === 'checkbox' ? target.checked : target.value;
   const name = target.name;
-  let password = document.getElementsByName("passwordcheck")[0];
-
-  password.setCustomValidity("");
 
   this.setState({
     [name]: value
@@ -43,16 +40,7 @@ handleInputChange(event) {
   handleSubmit(event) {
     event.preventDefault();
 
-    let password = document.getElementsByName("passwordcheck")[0];
-
-    if(this.state.password != this.state.passwordcheck) {
-      password.setCustomValidity("As senhas não conferem.");
-      return;
-    } else {
-      password.setCustomValidity("");
-    }
-
-    http.put('/clients/'+this.state.id, this.state)
+    http.put('/users/'+this.state.id, this.state)
       .then(res => {
         this.props.history.push('/admin/clientes');
       });
@@ -64,6 +52,10 @@ handleInputChange(event) {
         <h1>Editar Cliente</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
+            <label htmlFor="username">Nome</label>
+            <input type="text" autoFocus name="username" value={this.state.username} onChange={this.handleInputChange} required />
+          </div>
+          <div className="form-group">
             <label htmlFor="name">Nome</label>
             <input type="text" autoFocus name="name" value={this.state.name} onChange={this.handleInputChange} required />
           </div>
@@ -74,14 +66,6 @@ handleInputChange(event) {
           <div className="form-group">
             <label htmlFor="cpf">CPF</label>
             <input type="number" name="cpf"  value={this.state.cpf} onChange={this.handleInputChange} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Senha</label>
-            <input type="password" name="password"  value={this.state.password} onChange={this.handleInputChange} required />
-          </div>
-           <div className="form-group">
-            <label htmlFor="password">Confirmar Senha</label>
-            <input type="password" name="passwordcheck"  value={this.state.passwordcheck} onChange={this.handleInputChange} required />
           </div>
 
           <div className="form-group">

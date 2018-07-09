@@ -24,8 +24,10 @@ class MainAdmin extends React.Component {
 		super(props);
 	}
 	componentDidMount() {
-		if (!model.auth('admin'))
-			this.props.history.push('/login');
+		model.auth('admin').then((res) => {
+			if (res == false)
+				this.props.history.push('/login');
+		});			
 	}
 	render() {
 		return (

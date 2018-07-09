@@ -12,7 +12,7 @@ class Admin extends React.Component{
   }
 
   componentDidMount() {
-    http.get('/admins')
+    http.get('/users?role=admin')
       .then(res => {
         this.setState({
            admins: res.data
@@ -30,6 +30,7 @@ class Admin extends React.Component{
     const admins = this.state.admins.map((admin) =>
       <tr>
         <td>{admin.id}</td>
+        <td>{admin.username}</td>
         <td>{admin.name}</td>
         <td>{admin.email}</td>
         <td>{admin.cpf}</td>
@@ -47,6 +48,7 @@ class Admin extends React.Component{
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Usuário</th>
                     <th>Nome</th>
                     <th>E-mail</th>
                     <th>CPF</th>

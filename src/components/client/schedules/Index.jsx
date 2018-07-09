@@ -8,7 +8,6 @@ class Index extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id: '',
 			animalId: '',
 			serviceId: '',
 			time: "08:00",
@@ -24,7 +23,7 @@ class Index extends React.Component {
 	}
 
 	componentWillMount() {
-		http.get('/animals?clientId=' + JSON.parse(localStorage.getItem('jwt')).id)
+		http.get('/animals')
 			.then(res => {
 				this.setState({
 					animals: res.data
@@ -38,19 +37,10 @@ class Index extends React.Component {
 				});
 			});
 
-		http.get('/schedules?date=' + this.state.date + '&_sort=time')
+		http.get('/schedules?date=' + this.state.date)
 			.then(res => {
-				let schedules = [];
-				res.data.forEach((schedule) => {
-					let animal = model.getById(schedule.animalId, this.state.animals)
-					if (animal != undefined) {
-						if (animal.clientId != JSON.parse(localStorage.getItem('jwt')).id)
-							schedule.animalId = null;
-					}
-					schedules.push(schedule);		
-				});
 				this.setState({
-					schedules: schedules
+					schedules: res.data
 				});
 			});
 
@@ -63,26 +53,17 @@ class Index extends React.Component {
 			date: target.value
 		});
 
-		http.get('/schedules?date=' + target.value + '&_sort=time')
+		http.get('/schedules?date=' + target.value)
 			.then(res => {
-				let schedules = [];
-				res.data.forEach((schedule) => {
-					let animal = model.getById(schedule.animalId, this.state.animals)
-					if (animal != undefined) {
-						if (animal.clientId != JSON.parse(localStorage.getItem('jwt')).id)
-							schedule.animalId = null;
-					}
-					schedules.push(schedule);		
-				});
 				this.setState({
-					schedules: schedules
+					schedules: res.data
 				});
 			});
 	}
 
 	removeSchedule(id) {
 		model.removeById(id, 'schedules').then(() => {
-			this.componentDidMount();
+			this.componentWillMount();
 		});
 	}
 
@@ -104,24 +85,18 @@ class Index extends React.Component {
 		event.preventDefault();
 
 		let timeInput = document.getElementsByName("time")[0];
-		let dateInput = document.getElementsByName("date")[0];
 		let dateMoment = moment(this.state.date, 'YYYY-MM-DD');
 		let timeMoment = moment(this.state.time, 'HH:mm');
 
-		if (!dateMoment.isSameOrAfter(Date.now())) {
-			dateInput.setCustomValidity("Data inválida.");
-		}
-
 		let data = {
-			id: this.state.id,
-			animalId: parseInt(this.state.animalId),
-			serviceId: parseInt(this.state.serviceId),
+			animalId: this.state.animalId,
+			serviceId: this.state.serviceId,
 			time: this.state.time,
 			date: this.state.date
 		}
 		http.post('/schedules', data)
 			.then(res => {
-				this.componentDidMount();
+				this.componentWillMount();
 			}).catch(error => {
 				timeInput.setCustomValidity("Horário já reservado ou fora do horário comercial.");
 			})

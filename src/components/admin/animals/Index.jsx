@@ -13,7 +13,7 @@ class Animals extends React.Component{
   }
 
   componentDidMount() {
-    http.get('/clients')
+    http.get('/users?role=client')
 			.then(res => {
 				this.setState({
 					clients: res.data

@@ -24,8 +24,10 @@ class MainClient extends React.Component{
 		super(props);
 	}
 	componentDidMount() {
-		if (!model.auth('client'))
-			this.props.history.push('/login');
+		model.auth('client').then((res) => {
+			if (res == false)
+				this.props.history.push('/login');
+		});		
   }
 	render (){
 		return (

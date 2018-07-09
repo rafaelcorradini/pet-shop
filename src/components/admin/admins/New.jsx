@@ -6,12 +6,12 @@ class NewAdmin extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
       name: null,
+      username: null,
       email: null,
       cpf: null,
-      phone: null,
-      password: null
+      password: null,
+      role: 'admin'
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -44,8 +44,8 @@ class NewAdmin extends React.Component{
     } else {
       password.setCustomValidity("");
     }
-  
-    http.post('/admins', this.state)
+    delete this.state.passwordcheck;
+    http.post('/users', this.state)
       .then(res => {
         this.props.history.push('/admin/administradores');
       });
@@ -59,6 +59,10 @@ class NewAdmin extends React.Component{
         <h1>Cadastrar Administrador</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
+            <label htmlFor="username">Usuário</label>
+            <input type="text" autoFocus name="username" value={this.state.username} onChange={this.handleInputChange} required />
+          </div>
+          <div className="form-group">
             <label htmlFor="name">Nome</label>
             <input type="text" autoFocus name="name" value={this.state.name} onChange={this.handleInputChange} required />
           </div>
@@ -69,10 +73,6 @@ class NewAdmin extends React.Component{
           <div className="form-group">
             <label htmlFor="cpf">CPF</label>
             <input type="number" name="cpf"  value={this.state.cpf} onChange={this.handleInputChange} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="phone">Phone</label>
-            <input type="number" name="phone"  value={this.state.phone} onChange={this.handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="password">Senha</label>

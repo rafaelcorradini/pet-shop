@@ -12,7 +12,7 @@ class Animals extends React.Component{
   }
 
   componentDidMount() {
-    http.get('/animals?clientId=' + JSON.parse(localStorage.getItem('jwt')).id)
+    http.get('/animals')
       .then(res => {
         this.setState({
            animals: res.data

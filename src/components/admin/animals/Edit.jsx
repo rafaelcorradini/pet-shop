@@ -25,7 +25,7 @@ class EditAnimal extends React.Component{
         this.setState(res.data);
       });
 
-    http.get('/clients')
+    http.get('/users?role=client')
 			.then(res => {
 				this.setState({
 					clients: res.data
@@ -53,7 +53,7 @@ class EditAnimal extends React.Component{
       species: this.state.species,
       breed: this.state.breed,
       age: parseInt(this.state.age),
-      clientId: parseInt(this.state.clientId)
+      clientId: this.state.clientId
     };
   
     http.put('/animals/'+data.id, data)

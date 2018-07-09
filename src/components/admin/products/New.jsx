@@ -6,8 +6,8 @@ class ProductNew extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
-      name: null
+      name: null,
+      description: null,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -26,12 +26,8 @@ class ProductNew extends React.Component{
 
   handleSubmit(event) {
     event.preventDefault(); 
-
-    let data = {};
-    Object.assign(data, this.state);
-    delete data.categories;
   
-    http.post('/products', data)
+    http.post('/products', this.state)
       .then(res => {
         this.props.history.push('/admin/produtos');
       });

@@ -8,6 +8,7 @@ class EditAdmins extends React.Component{
     this.state = {
       id: null,
       name: null,
+
       email: null,
       cpf: null,
       password: null,
@@ -19,7 +20,7 @@ class EditAdmins extends React.Component{
   }
 
   componentDidMount() {
-    http.get('/admins/'+this.props.match.params.id)
+    http.get('/users/'+this.props.match.params.id)
       .then(res => {
         this.setState(res.data);
       });
@@ -44,14 +45,13 @@ class EditAdmins extends React.Component{
     event.preventDefault();
 
     let password = document.getElementsByName("passwordcheck")[0];
-    
     if(this.state.password != this.state.passwordcheck) {
       password.setCustomValidity("As senhas não conferem.");
       return;
     } else {
       password.setCustomValidity("");
     }
-  
+    delete this.state.passwordcheck;
     http.put('/admins/'+this.state.id, this.state)
       .then(res => {
         this.props.history.push('/admin/administradores');

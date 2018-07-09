@@ -5,32 +5,16 @@ const model = {
   getById: (id, collection) => {
     return collection.filter(item => item.id === id)[0];
   },
-  auth: (type) => {
-    let user = JSON.parse(localStorage.getItem('jwt'));
-
-    if (user == null || user == undefined || user.email == null || user.password == null || user.type != type)
-      return false;
-
-    if (user.type = 'client') {
-      return  http
-              .get('/clients?email='+ user.email)
-              .then(res => {
-                if (res.data.length > 0)
-                  if (res.data[0].password == user.password)
-                    return true;
-                return false;
-              });
-    } else {
-      return  http
-              .get('/admins?email='+ user.email)
-              .then(res => {
-                if (res.data.length > 0)
-                  if (res.data[0].password == user.password)
-                    return true;
-                return false;
-              });
-    }
-    
+  auth: async (type) => {
+    let test = false;
+    await http.get('/users/me')
+      .then(res => {
+        if (res.status == 200 && res.data.role == type)
+          test = true;
+      }, err => {
+        test = false;
+      });
+    return test;
   },
   removeById: (id, resource) => {
     return http.delete('/' + resource + '/' + id);

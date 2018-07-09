@@ -7,7 +7,8 @@ class ProductsEdit extends React.Component{
     super(props);
     this.state = {
       id: null,
-      name: null
+      name: null,
+      description: null
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -33,12 +34,8 @@ class ProductsEdit extends React.Component{
 
   handleSubmit(event) {
     event.preventDefault();
-
-    let data = {};
-    Object.assign(data, this.state);
-    delete data.categories;
   
-    http.put('/products/'+data.id, data)
+    http.put('/products/'+this.state.id, this.state)
       .then(res => {
         this.props.history.push('/admin/produtos');
       });

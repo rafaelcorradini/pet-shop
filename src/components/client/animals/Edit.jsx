@@ -22,8 +22,6 @@ class EditAnimal extends React.Component{
     http.get('/animals/'+this.props.match.params.id)
       .then(res => {
         this.setState(res.data);
-        if(res.data.clientId != JSON.parse(localStorage.getItem('jwt')).id)
-          this.props.history.push('/cliente/animais');
       });
   }
 
@@ -39,12 +37,8 @@ class EditAnimal extends React.Component{
 
   handleSubmit(event) {
     event.preventDefault();
-
-    let data = {};
-    Object.assign(data, this.state);
-    delete data.categories;
   
-    http.put('/animals/'+data.id, data)
+    http.put('/animals/'+this.state.id, this.state)
       .then(res => {
         this.props.history.push('/cliente/animais');
       });

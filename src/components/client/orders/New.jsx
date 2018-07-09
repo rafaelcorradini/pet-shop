@@ -8,7 +8,6 @@ class Index extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id: '',
 			productId: '',
 			date: moment(moment.utc(Date.now())).format('YYYY-MM-DD'),
 			quantity: 1,
@@ -27,16 +26,14 @@ class Index extends React.Component {
 				this.setState({
 					products: res.data
 				});
-				http.get('/orders?clientId=' + JSON.parse(localStorage.getItem('jwt')).id + '&finalized=false')
+				http.get('/orders?finalized=false')
 					.then(res => {
 						if (res.data.length > 0) {
 							this.setState({
 								order: res.data[0]
 							});
 						} else {
-							let clientId = JSON.parse(localStorage.getItem('jwt')).id;
 							let data = {
-								clientId: clientId,
 								finalized: false,
 								date: this.state.date,
 								items: []
@@ -81,7 +78,7 @@ class Index extends React.Component {
 		event.preventDefault();
 
 		let item = {
-			productId: parseInt(this.state.productId),
+			productId: this.state.productId,
 			quantity: parseInt(this.state.quantity)
 		}
 		let order = this.state.order;

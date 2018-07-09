@@ -6,7 +6,6 @@ class NewAnimal extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
       name: null,
       species: null,
       breed: null,
@@ -21,7 +20,7 @@ class NewAnimal extends React.Component{
 
   componentDidMount() {
 
-    http.get('/clients')
+    http.get('/users?role=client')
 			.then(res => {
 				this.setState({
 					clients: res.data
@@ -49,7 +48,7 @@ class NewAnimal extends React.Component{
       species: this.state.species,
       breed: this.state.breed,
       age: parseInt(this.state.age),
-      clientId: parseInt(this.state.clientId)
+      clientId: this.state.clientId
     };
   
     http.post('/animals', data)

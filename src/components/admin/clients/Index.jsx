@@ -12,7 +12,7 @@ class Clients extends React.Component{
   }
 
   componentDidMount() {
-    http.get('/clients')
+    http.get('/users?role=client')
       .then(res => {
         this.setState({
            clients: res.data
@@ -30,6 +30,7 @@ class Clients extends React.Component{
     const clients = this.state.clients.map((client) =>
       <tr>
         <td>{client.id}</td>
+        <td>{client.username}</td>
         <td>{client.name}</td>
         <td>{client.email}</td>
         <td>{client.cpf}</td>
@@ -47,9 +48,10 @@ class Clients extends React.Component{
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Usuário</th>
                     <th>Nome</th>
-                    <th>CPF</th>
                     <th>E-mail</th>
+                    <th>CPF</th>
                     <th>Açoes</th>
                 </tr>
             </thead>

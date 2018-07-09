@@ -58,18 +58,13 @@ class EditAnimal extends React.Component{
 		event.preventDefault();
 
 		let timeInput = document.getElementsByName("time")[0];
-		let dateInput = document.getElementsByName("date")[0];
 		let dateMoment = moment(this.state.date, 'YYYY-MM-DD');
 		let timeMoment = moment(this.state.time, 'HH:mm');
 
-		if (!dateMoment.isSameOrAfter(Date.now())) {
-			dateInput.setCustomValidity("Data inválida.");
-		}
-
 		let data = {
 			id: this.state.id,
-			animalId: parseInt(this.state.animalId),
-			serviceId: parseInt(this.state.serviceId),
+			animalId: this.state.animalId,
+			serviceId: this.state.serviceId,
 			time: this.state.time,
 			date: this.state.date
 		}

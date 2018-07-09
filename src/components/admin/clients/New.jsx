@@ -6,12 +6,13 @@ class ProductNew extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
       name: null,
+      username: null,
       email: null,
       cpf: null,
       password: null,
-      passwordcheck: null
+      passwordcheck: null,
+      role: 'client'
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -43,8 +44,8 @@ class ProductNew extends React.Component{
     } else {
       password.setCustomValidity("");
     }
-  
-    http.post('/clients', this.state)
+    delete this.state.passwordcheck;
+    http.post('/users', this.state)
       .then(res => {
         this.props.history.push('/admin/clientes');
       });
@@ -57,6 +58,10 @@ class ProductNew extends React.Component{
       <div>
         <h1>Cadastrar Cliente</h1>
         <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username">Usuário</label>
+            <input type="text" autoFocus name="username" value={this.state.username} onChange={this.handleInputChange} required />
+          </div>
           <div className="form-group">
             <label htmlFor="name">Nome</label>
             <input type="text" autoFocus name="name" value={this.state.name} onChange={this.handleInputChange} required />
